@@ -25,4 +25,8 @@ final class PexelFeedTableViewCell: UITableViewCell {
         icon.image = nil
         feedImage.image = nil
     }
+    
+    func setInt(_ int: Int) {
+        title.text = "\(int)"
+    }
 }
