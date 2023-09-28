@@ -20,6 +20,9 @@
 		7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40E42AC60CFA00FE71D2 /* PexelFeedPresenter.swift */; };
 		7DFC40E92AC60DA200FE71D2 /* PexelFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40E82AC60DA200FE71D2 /* PexelFeedViewOutput.swift */; };
 		7DFC40EB2AC60DC700FE71D2 /* PexelFeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */; };
+		7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */; };
+		7DFC40F12AC618E600FE71D2 /* PexelFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */; };
+		7DFC40F32AC61F9F00FE71D2 /* FeedMock.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40F22AC61F9F00FE71D2 /* FeedMock.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		7DFC40E42AC60CFA00FE71D2 /* PexelFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedPresenter.swift; sourceTree = "<group>"; };
 		7DFC40E82AC60DA200FE71D2 /* PexelFeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewOutput.swift; sourceTree = "<group>"; };
 		7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewInput.swift; sourceTree = "<group>"; };
+		7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDisplayItem.swift; sourceTree = "<group>"; };
+		7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedItem.swift; sourceTree = "<group>"; };
+		7DFC40F22AC61F9F00FE71D2 /* FeedMock.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedMock.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		7DFC40A52AC5675A00FE71D2 /* TestPexel */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC40EE2AC618CC00FE71D2 /* Domain */,
 				7DFC40E02AC60C8F00FE71D2 /* User Interface */,
 				7DFC40C12AC580D500FE71D2 /* Packages */,
 				7DFC40BA2AC56CE000FE71D2 /* Resource */,
@@ -131,6 +138,7 @@
 			children = (
 				7DFC40E82AC60DA200FE71D2 /* PexelFeedViewOutput.swift */,
 				7DFC40E42AC60CFA00FE71D2 /* PexelFeedPresenter.swift */,
+				7DFC40F22AC61F9F00FE71D2 /* FeedMock.txt */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -141,8 +149,25 @@
 				7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */,
 				7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */,
 				7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */,
+				7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7DFC40EE2AC618CC00FE71D2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40EF2AC618D700FE71D2 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7DFC40EF2AC618D700FE71D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */,
+				7DFC40F32AC61F9F00FE71D2 /* FeedMock.txt in Resources */,
 				7DFC40D32AC5DBB200FE71D2 /* ZscalerRootCA.cer in Resources */,
 				7DFC40B02AC5675D00FE71D2 /* Assets.xcassets in Resources */,
 				7DFC40AE2AC5675A00FE71D2 /* Main.storyboard in Resources */,
@@ -222,6 +248,8 @@
 			files = (
 				7DFC40EB2AC60DC700FE71D2 /* PexelFeedViewInput.swift in Sources */,
 				7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */,
+				7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */,
+				7DFC40F12AC618E600FE71D2 /* PexelFeedItem.swift in Sources */,
 				7DFC40E32AC60CC700FE71D2 /* MockURLSessionProtocol.swift in Sources */,
 				7DFC40BE2AC5751200FE71D2 /* PexelFeedViewController.swift in Sources */,
 				7DFC40A72AC5675A00FE71D2 /* AppDelegate.swift in Sources */,

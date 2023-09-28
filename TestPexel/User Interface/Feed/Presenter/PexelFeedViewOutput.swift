@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PexelFeedViewOutput {
-    var items: [Int] { get }
+    var items: [PexelFeedDisplayItem] { get }
     
     func onViewDidLoad()
 }

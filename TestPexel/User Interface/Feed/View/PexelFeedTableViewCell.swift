@@ -26,7 +26,7 @@ final class PexelFeedTableViewCell: UITableViewCell {
         feedImage.image = nil
     }
     
-    func setInt(_ int: Int) {
-        title.text = "\(int)"
+    func setup(with item: PexelFeedDisplayItem) {
+        title.text = item.title
     }
 }

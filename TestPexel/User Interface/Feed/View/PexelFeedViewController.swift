@@ -56,7 +56,7 @@ extension PexelFeedViewController: UITableViewDataSource {
             preconditionFailure("Could not get cell")
         }
         
-        cell.setInt(output.items[indexPath.row])
+        cell.setup(with: output.items[indexPath.row])
 
         return cell
     }
