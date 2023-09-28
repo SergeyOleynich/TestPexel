@@ -3,4 +3,69 @@
    uuid = "4B801922-AF79-40F2-8EA9-FAB4449679FF"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC2E9CFA-2F50-4831-B3AD-A925EFE4C77B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestPexel/Packages/PexelNetworkService/Sources/CustomNetworkService/RESTService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "request(resource:response:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AC2E9CFA-2F50-4831-B3AD-A925EFE4C77B - 50bfa2cc97ab01b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CustomNetworkService.RESTService.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(resource: CustomNetworkService.Resource&lt;&#x3c4;_0_0&gt;, response: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestPexel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/solei/Documents/TestPexel/TestPexel/Packages/PexelNetworkService/Sources/CustomNetworkService/RESTService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "AC2E9CFA-2F50-4831-B3AD-A925EFE4C77B - 50bfa2cc97ab019a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CustomNetworkService.RESTService.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(resource: CustomNetworkService.Resource&lt;&#x3c4;_0_0&gt;, response: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestPexel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/solei/Documents/TestPexel/TestPexel/Packages/PexelNetworkService/Sources/CustomNetworkService/RESTService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "512">
+               </Location>
+               <Location
+                  uuid = "AC2E9CFA-2F50-4831-B3AD-A925EFE4C77B - a2f5ff9d0fd2cc9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () throws -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CustomNetworkService.RESTService.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(resource: CustomNetworkService.Resource&lt;&#x3c4;_0_0&gt;, response: (Swift.Result&lt;&#x3c4;_0_0, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TestPexel"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/solei/Documents/TestPexel/TestPexel/Packages/PexelNetworkService/Sources/CustomNetworkService/RESTService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -8,6 +8,45 @@
 import UIKit
 import CustomNetworkService
 
+class MockURLSessionProtocol: URLProtocol {
+    private static var mocks: [URL: MockURLSessionProtocol.Mock] = [:]
+    
+    private struct Mock {
+        let data: Data?
+        let response: URLResponse?
+        let error: Error?
+    }
+    
+    override class func canInit(with request: URLRequest) -> Bool {
+        guard let requestUrl = request.url else { return false }
+        
+        return mocks[requestUrl] != nil
+    }
+    
+    override class func canInit(with task: URLSessionTask) -> Bool { true }
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
+    
+    override func startLoading() {
+        defer {
+            client?.urlProtocolDidFinishLoading(self)
+        }
+        
+        guard let requestUrl = request.url, let mock = Self.mocks[requestUrl] else { return }
+        
+        mock.data.flatMap { client?.urlProtocol(self, didLoad: $0)}
+        mock.response.flatMap { client?.urlProtocol(self, didReceive: $0, cacheStoragePolicy: .notAllowed) }
+        mock.error.flatMap { client?.urlProtocol(self, didFailWithError: $0 )}
+    }
+    
+    override func stopLoading() {
+        
+    }
+    
+    static func mock(for url: URL, data: Data?, response: URLResponse?, error: Error?) {
+        mocks[url] = MockURLSessionProtocol.Mock(data: data, response: response, error: error)
+    }
+}
+
 final class PexelFeedViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
@@ -17,7 +56,19 @@ final class PexelFeedViewController: UIViewController {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         
-        let network = RESTService()
+        let configuration = URLSessionConfiguration.default
+        configuration.protocolClasses = [MockURLSessionProtocol.self]
+        MockURLSessionProtocol.mock(
+            for: URL(string: "https://api.pexels.com/v1/curated?per_page=1")!,
+            data: "Test".data(using: .utf8),
+            response: HTTPURLResponse(
+                url: URL(string: "https://api.pexels.com/v1/curated?per_page=1")!,
+                statusCode: 200,
+                httpVersion: nil,
+                headerFields: nil),
+            error: nil)
+        
+        let network = RESTService(session: URLSession(configuration: configuration))
         var request = URLRequest(url: URL(string: "https://api.pexels.com/v1/curated?per_page=1")!)
         request.setValue("xefBfgNDNw1VlMjOFMRLvt8mfWhmnNQ1fUQrr1UIt3QFS2tBB083iHv3", forHTTPHeaderField: "Authorization")
         
