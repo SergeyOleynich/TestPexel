@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CustomNetworkService
 
 final class PexelFeedViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
@@ -15,6 +16,21 @@ final class PexelFeedViewController: UIViewController {
         
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        
+        let network = RESTService()
+        var request = URLRequest(url: URL(string: "https://api.pexels.com/v1/curated?per_page=1")!)
+        request.setValue("xefBfgNDNw1VlMjOFMRLvt8mfWhmnNQ1fUQrr1UIt3QFS2tBB083iHv3", forHTTPHeaderField: "Authorization")
+        
+        let resource = Resource<String>(urlRequest: request)
+        network.request(resource: resource) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+                
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
 }
 

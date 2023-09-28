@@ -14,6 +14,8 @@
 		7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40B12AC5675D00FE71D2 /* LaunchScreen.storyboard */; };
 		7DFC40BE2AC5751200FE71D2 /* PexelFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */; };
 		7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */; };
+		7DFC40D12AC5CB8100FE71D2 /* PexelNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */; };
+		7DFC40D32AC5DBB200FE71D2 /* ZscalerRootCA.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40D22AC5DABE00FE71D2 /* ZscalerRootCA.cer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7DFC40B42AC5675D00FE71D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewController.swift; sourceTree = "<group>"; };
 		7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedTableViewCell.swift; sourceTree = "<group>"; };
+		7DFC40C82AC5CA2600FE71D2 /* PexelNetworkService */ = {isa = PBXFileReference; lastKnownFileType = text; name = PexelNetworkService; path = TestPexel/Packages/PexelNetworkService; sourceTree = SOURCE_ROOT; };
+		7DFC40D22AC5DABE00FE71D2 /* ZscalerRootCA.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZscalerRootCA.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFC40D12AC5CB8100FE71D2 /* PexelNetworkService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,7 @@
 			children = (
 				7DFC40A52AC5675A00FE71D2 /* TestPexel */,
 				7DFC40A42AC5675A00FE71D2 /* Products */,
+				7DFC40CF2AC5CB8100FE71D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +64,7 @@
 		7DFC40A52AC5675A00FE71D2 /* TestPexel */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC40C12AC580D500FE71D2 /* Packages */,
 				7DFC40BA2AC56CE000FE71D2 /* Resource */,
 				7DFC40A62AC5675A00FE71D2 /* AppDelegate.swift */,
 				7DFC40A82AC5675A00FE71D2 /* SceneDelegate.swift */,
@@ -72,10 +79,26 @@
 		7DFC40BA2AC56CE000FE71D2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC40D22AC5DABE00FE71D2 /* ZscalerRootCA.cer */,
 				7DFC40AF2AC5675D00FE71D2 /* Assets.xcassets */,
 				7DFC40B42AC5675D00FE71D2 /* Info.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		7DFC40C12AC580D500FE71D2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40C82AC5CA2600FE71D2 /* PexelNetworkService */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		7DFC40CF2AC5CB8100FE71D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +117,9 @@
 			dependencies = (
 			);
 			name = TestPexel;
+			packageProductDependencies = (
+				7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */,
+			);
 			productName = TestPexel;
 			productReference = 7DFC40A32AC5675A00FE71D2 /* TestPexel.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */,
+				7DFC40D32AC5DBB200FE71D2 /* ZscalerRootCA.cer in Resources */,
 				7DFC40B02AC5675D00FE71D2 /* Assets.xcassets in Resources */,
 				7DFC40AE2AC5675A00FE71D2 /* Main.storyboard in Resources */,
 			);
@@ -302,6 +329,7 @@
 				DEVELOPMENT_TEAM = UKL4FRSYNB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestPexel/Resource/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,6 +362,7 @@
 				DEVELOPMENT_TEAM = UKL4FRSYNB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestPexel/Resource/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -378,6 +407,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PexelNetworkService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7DFC409B2AC5675A00FE71D2 /* Project object */;
 }
