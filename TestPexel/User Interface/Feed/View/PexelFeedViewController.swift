@@ -45,7 +45,9 @@ final class PexelFeedViewController: UIViewController {
                 resourceFactory: PexelFeedResourceFactoryImpl()),
             paginator: paginatorStateProvider)
         
-        let presenter = PexelFeedPresenter(dataProvider: dataProvider)
+        let presenter = PexelFeedPresenter(
+            dataProvider: dataProvider,
+            displayItemProvider: PexelFeedDisplayItemProviderImpl())
         
         paginatorStateProvider.delegate = presenter
         presenter.viewInput = self

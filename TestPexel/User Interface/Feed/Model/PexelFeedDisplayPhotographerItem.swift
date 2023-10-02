@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit.UIView
 
 struct PexelFeedDisplayPhotographerItem: PexelFeedDisplayItem {
     var cellType: UIView.Type { PexelFeedTableViewCell.self }
     
     let title: String
-    let imageUrl: URL
+    let imageUrl: URL?
 }

@@ -12,9 +12,11 @@ final class PexelFeedPresenter {
     
     private var inputDataSource: [PexelFeedDisplayItem] = []
     private let dataProvider: PexelFeedDataProvider
+    private let displayItemProvider: PexelFeedDisplayItemProvider
     
-    init(dataProvider: PexelFeedDataProvider) {
+    init(dataProvider: PexelFeedDataProvider, displayItemProvider: PexelFeedDisplayItemProvider) {
         self.dataProvider = dataProvider
+        self.displayItemProvider = displayItemProvider
     }
 }
 
@@ -52,13 +54,12 @@ private extension PexelFeedPresenter {
     func provideData(for page: Int) {
         dataProvider.provideData(for: page) {[weak self] result in
             switch result {
-            case let .success(feedModel):
+            case let .success(feedResponseItem):
                 let loadMoreIndex = self?.inputDataSource.firstIndex(where: { $0 is PexelFeedDisplayLoadMoreItem }) ?? 0
                 
-                self?.inputDataSource.insert(contentsOf: feedModel.photos
-                    .map { PexelFeedDisplayPhotographerItem.init(
-                        title: $0.photographerName,
-                        imageUrl: URL(string: $0.src.medium)!) }, at: loadMoreIndex)
+                let displayItems = feedResponseItem.photos.compactMap { self?.displayItemProvider.provideDisplayItem(from: $0) }
+                
+                self?.inputDataSource.insert(contentsOf: displayItems, at: loadMoreIndex)
                 
                 self?.viewInput?.didLoadItems()
                 

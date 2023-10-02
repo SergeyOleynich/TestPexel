@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol TableItem {
-    
-}
+protocol TableItem { }
 
 protocol AnyTableViewCell {
     func setupAny(model: TableItem)

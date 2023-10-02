@@ -16,7 +16,6 @@ protocol PexelFeedResourceFactory {
 struct PexelFeedResourceFactoryImpl: PexelFeedResourceFactory {
     var feedResource: ((Int) -> Resource<PexelFeedResponseItem>) {
         return { page in
-            
             var urlComponent = URLComponents()
             urlComponent.queryItems = [
                 URLQueryItem(name: "per_page", value: "10"),
