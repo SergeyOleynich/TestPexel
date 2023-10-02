@@ -7,6 +7,25 @@
 
 import Foundation
 
+/*
+ //        guard let feedMockUrl = Bundle.main.url(forResource: "FeedMock", withExtension: "txt") else { return }
+ //        guard let feedMockData = try? Data(contentsOf: feedMockUrl) else { return }
+ //
+ //        let configuration = URLSessionConfiguration.default
+ //        configuration.protocolClasses = [MockURLSessionProtocol.self]
+ //        MockURLSessionProtocol.mock(
+ //            for: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
+ //            data: feedMockData,
+ //            response: HTTPURLResponse(
+ //                url: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
+ //                statusCode: 200,
+ //                httpVersion: nil,
+ //                headerFields: nil),
+ //            error: nil)
+         
+ //        let network = RESTService(session: URLSession(configuration: configuration))
+ */
+
 public final class MockURLSessionProtocol: URLProtocol {
     private static var mocks: [URL: Mock] = [:]
     

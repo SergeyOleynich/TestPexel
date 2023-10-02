@@ -36,6 +36,8 @@
 		7DFC41182ACACABF00FE71D2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41172ACACABF00FE71D2 /* TableViewCell.swift */; };
 		7DFC411A2ACACAD200FE71D2 /* AnyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41192ACACAD200FE71D2 /* AnyTableViewCell.swift */; };
 		7DFC411C2ACACAE600FE71D2 /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC411B2ACACAE600FE71D2 /* TableItem.swift */; };
+		7DFC41202ACADD7600FE71D2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC411F2ACADD7600FE71D2 /* ImageLoader.swift */; };
+		7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		7DFC41172ACACABF00FE71D2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7DFC41192ACACAD200FE71D2 /* AnyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTableViewCell.swift; sourceTree = "<group>"; };
 		7DFC411B2ACACAE600FE71D2 /* TableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItem.swift; sourceTree = "<group>"; };
+		7DFC411F2ACADD7600FE71D2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,9 @@
 		7DFC40A52AC5675A00FE71D2 /* TestPexel */ = {
 			isa = PBXGroup;
 			children = (
-				7DFC41142ACACA7D00FE71D2 /* Presentation Layer */,
 				7DFC40EE2AC618CC00FE71D2 /* Domain */,
+				7DFC411D2ACADD6600FE71D2 /* Business Logic Layer */,
+				7DFC41142ACACA7D00FE71D2 /* Presentation Layer */,
 				7DFC40C12AC580D500FE71D2 /* Packages */,
 				7DFC40BA2AC56CE000FE71D2 /* Resource */,
 				7DFC40A62AC5675A00FE71D2 /* AppDelegate.swift */,
@@ -281,6 +286,23 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		7DFC411D2ACADD6600FE71D2 /* Business Logic Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC411E2ACADD6600FE71D2 /* Image Loader */,
+			);
+			path = "Business Logic Layer";
+			sourceTree = "<group>";
+		};
+		7DFC411E2ACADD6600FE71D2 /* Image Loader */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC411F2ACADD7600FE71D2 /* ImageLoader.swift */,
+				7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */,
+			);
+			path = "Image Loader";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +384,7 @@
 				7DFC41002ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift in Sources */,
 				7DFC41032ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift in Sources */,
 				7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */,
+				7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */,
 				7DFC410D2ACAC58F00FE71D2 /* PexelFeedResponseItem.swift in Sources */,
 				7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */,
 				7DFC41082ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift in Sources */,
@@ -373,6 +396,7 @@
 				7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */,
 				7DFC410F2ACAC5F000FE71D2 /* PexelFeedResponsePhotoItem.swift in Sources */,
 				7DFC410A2ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift in Sources */,
+				7DFC41202ACADD7600FE71D2 /* ImageLoader.swift in Sources */,
 				7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */,
 				7DFC40E92AC60DA200FE71D2 /* PexelFeedViewOutput.swift in Sources */,
 				7DFC411C2ACACAE600FE71D2 /* TableItem.swift in Sources */,

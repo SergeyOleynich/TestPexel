@@ -17,24 +17,7 @@ final class PexelFeedViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
-//        guard let feedMockUrl = Bundle.main.url(forResource: "FeedMock", withExtension: "txt") else { return }
-//        guard let feedMockData = try? Data(contentsOf: feedMockUrl) else { return }
-//
-//        let configuration = URLSessionConfiguration.default
-//        configuration.protocolClasses = [MockURLSessionProtocol.self]
-//        MockURLSessionProtocol.mock(
-//            for: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
-//            data: feedMockData,
-//            response: HTTPURLResponse(
-//                url: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
-//                statusCode: 200,
-//                httpVersion: nil,
-//                headerFields: nil),
-//            error: nil)
-        
-//        let network = RESTService(session: URLSession(configuration: configuration))
-        
+                
         let network = RESTService()
         
         let paginatorStateProvider = PexelFeedPaginator()
@@ -45,10 +28,16 @@ final class PexelFeedViewController: UIViewController {
                 resourceFactory: PexelFeedResourceFactoryImpl()),
             paginator: paginatorStateProvider)
         
+        let displayItemProvider = PexelFeedDisplayItemProviderImpl()
+        
+        let imageLoader = ImageLoaderImpl()
+        
         let presenter = PexelFeedPresenter(
             dataProvider: dataProvider,
-            displayItemProvider: PexelFeedDisplayItemProviderImpl())
+            displayItemProvider: displayItemProvider,
+            imageLoader: imageLoader)
         
+        displayItemProvider.imageLoaderDelegate = imageLoader
         paginatorStateProvider.delegate = presenter
         presenter.viewInput = self
         output = presenter
@@ -89,9 +78,7 @@ extension PexelFeedViewController: UITableViewDataSource {
             for: indexPath
         )
         
-        if let cell = cell as? AnyTableViewCell {
-            cell.setupAny(model: displayModel)
-        }
+        (cell as? AnyTableViewCell)?.setupAny(model: displayModel)
         
         return cell
     }

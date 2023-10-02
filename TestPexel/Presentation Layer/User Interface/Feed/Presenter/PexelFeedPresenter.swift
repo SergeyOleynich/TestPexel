@@ -7,16 +7,24 @@
 
 import Foundation
 
+import UIKit.UIImage
+
 final class PexelFeedPresenter {
     weak var viewInput: PexelFeedViewInput?
     
     private var inputDataSource: [PexelFeedDisplayItem] = []
     private let dataProvider: PexelFeedDataProvider
     private let displayItemProvider: PexelFeedDisplayItemProvider
+    private let imageLoader: ImageLoader
     
-    init(dataProvider: PexelFeedDataProvider, displayItemProvider: PexelFeedDisplayItemProvider) {
+    init(
+        dataProvider: PexelFeedDataProvider,
+        displayItemProvider: PexelFeedDisplayItemProvider,
+        imageLoader: ImageLoader
+    ) {
         self.dataProvider = dataProvider
         self.displayItemProvider = displayItemProvider
+        self.imageLoader = imageLoader
     }
 }
 
@@ -47,6 +55,25 @@ extension PexelFeedPresenter: PexelFeedPaginatorDelegate {
         )
     }
 }
+
+//// MARK: - PexelFeedDisplayPhotographerItemDelegate
+//
+//extension PexelFeedPresenter: PexelFeedDisplayPhotographerItemDelegate {
+//    func loadImage(for url: URL, completion: @escaping (UIImage) -> Void) {
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            do {
+//                let imageData = try Data(contentsOf: url)
+//                if let image = UIImage(data: imageData) {
+//                    DispatchQueue.main.async {
+//                        completion(image)
+//                    }
+//                }
+//            } catch {
+//                print("image load error: \(error)")
+//            }
+//        }
+//    }
+//}
 
 // MARK: - Private
 

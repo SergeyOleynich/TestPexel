@@ -11,10 +11,16 @@ protocol PexelFeedDisplayItemProvider {
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem
 }
 
-struct PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
+final class PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
+    weak var imageLoaderDelegate: PexelFeedDisplayPhotographerItemDelegate?
+    
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem {
-        PexelFeedDisplayPhotographerItem(
+        var displayItem = PexelFeedDisplayPhotographerItem(
             title: responseModel.photographerName,
             imageUrl: responseModel.src.mediumUrl)
+        
+        displayItem.delegate = imageLoaderDelegate
+        
+        return displayItem
     }
 }
