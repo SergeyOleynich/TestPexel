@@ -19,7 +19,7 @@ let package = Package(
     targets: [
         .target(name: Targets.service.rawValue),
         .testTarget(
-            name: "NetworkServiceTests",
+            name: Targets.service.rawValue + "Tests",
             dependencies: [.targetItem(name: Targets.service.rawValue, condition: nil)]),
     ]
 )
