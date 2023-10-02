@@ -7,27 +7,7 @@
 
 import UIKit
 
-protocol TableItem { }
-
-protocol AnyTableViewCell {
-    func setupAny(model: TableItem)
-}
-
-protocol TableViewCell: AnyTableViewCell {
-    associatedtype Model
-    
-    func setup(with model: Model)
-}
-
-extension TableViewCell {
-    func setupAny(model: TableItem) {
-        guard let model = model as? Model else { preconditionFailure() }
-        
-        setup(with: model)
-    }
-}
-
-final class PexelFeedTableViewCell: UITableViewCell, TableViewCell {
+final class PexelFeedTableViewCell: UITableViewCell {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var icon: UIImageView!
     @IBOutlet private weak var feedImage: UIImageView!
@@ -43,7 +23,11 @@ final class PexelFeedTableViewCell: UITableViewCell, TableViewCell {
         icon.image = nil
         feedImage.image = nil
     }
-    
+}
+
+// MARK: - TableViewCell
+
+extension PexelFeedTableViewCell: TableViewCell {
     func setup(with model: PexelFeedDisplayPhotographerItem) {
         title.text = model.title
     }

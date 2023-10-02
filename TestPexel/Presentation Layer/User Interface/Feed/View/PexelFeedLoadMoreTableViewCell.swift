@@ -23,6 +23,8 @@ final class PexelFeedLoadMoreTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - TableViewCell
+
 extension PexelFeedLoadMoreTableViewCell: TableViewCell {
     func setup(with model: PexelFeedDisplayLoadMoreItem) {
         model.onNextLoad()
