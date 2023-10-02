@@ -11,4 +11,5 @@ protocol PexelFeedViewOutput {
     var items: [PexelFeedDisplayItem] { get }
     
     func onViewDidLoad()
+    func onSelected(item: PexelFeedDisplayItem)
 }

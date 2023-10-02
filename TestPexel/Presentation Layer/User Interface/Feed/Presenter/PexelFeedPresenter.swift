@@ -7,9 +7,19 @@
 
 import Foundation
 
+protocol PexelFeedRouter {
+    func navigate(to action: PexelFeedCoordinatorNavigationAction)
+}
+
+enum PexelFeedCoordinatorNavigationAction {
+    case detail(id: String)
+}
+
 final class PexelFeedPresenter: PexelFeedModuleInput {
     weak var viewInput: PexelFeedViewInput?
+    var router: PexelFeedRouter?
     
+    private var test: [PexelFeedResponsePhotoItem] = []
     private var inputDataSource: [PexelFeedDisplayItem] = []
     private let dataProvider: PexelFeedDataProvider
     private let displayItemProvider: PexelFeedDisplayItemProvider
@@ -33,6 +43,10 @@ extension PexelFeedPresenter: PexelFeedViewOutput {
     
     func onViewDidLoad() {
         provideData(for: 1)
+    }
+    
+    func onSelected(item: PexelFeedDisplayItem) {
+        router?.navigate(to: .detail(id: item.id))
     }
 }
 
@@ -61,6 +75,8 @@ private extension PexelFeedPresenter {
         dataProvider.provideData(for: page) {[weak self] result in
             switch result {
             case let .success(feedResponseItem):
+                dispatchPrecondition(condition: .notOnQueue(.main))
+                
                 let loadMoreIndex = self?.inputDataSource.firstIndex(where: { $0 is PexelFeedDisplayLoadMoreItem }) ?? 0
                 
                 let displayItems = feedResponseItem.photos.compactMap { self?.displayItemProvider.provideDisplayItem(from: $0) }

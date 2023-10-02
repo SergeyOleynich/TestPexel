@@ -19,8 +19,21 @@ final class FeedCoordinatorImpl: FeedCoordinator {
     }
     
     func start() {
-        guard let viewController = assembly.feedModuleInput.viewInput?.viewController else { return }
+        var moduleInput = assembly.feedModuleInput
         
+        guard let viewController = moduleInput.viewInput?.viewController else { return }
+        
+        moduleInput.router = self
         assembly.navigationController.pushViewController(viewController, animated: true)
+    }
+}
+
+extension FeedCoordinatorImpl: PexelFeedRouter {
+    func navigate(to action: PexelFeedCoordinatorNavigationAction) {
+        switch action {
+        case .detail(let id):
+            guard let viewController = assembly.detailFeedModuleInput.viewInput?.viewController else { return }
+            assembly.navigationController.pushViewController(viewController, animated: true)
+        }
     }
 }

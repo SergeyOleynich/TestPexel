@@ -10,4 +10,6 @@ import UIKit.UIView
 
 protocol PexelFeedDisplayItem: TableItem {
     var cellType: UIView.Type { get }
+
+    var id: String { get }
 }

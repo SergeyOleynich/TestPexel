@@ -41,4 +41,29 @@ struct PexelFeedAssembly {
         
         return presenter
     }
+    
+    var detailFeedModuleInput: PexelFeedModuleInput {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: String(describing: PexelFeedViewController.self)) as? PexelFeedViewController else {
+            preconditionFailure()
+        }
+                
+        let imageLoader = injection.imageLoader
+        var displayItemProvider = injection.displayItemProvider
+        let paginatorStateProvider = injection.paginatorStateProvider
+        let dataProvider = injection.dataProvider
+        
+        let presenter = PexelFeedPresenter(
+            dataProvider: dataProvider,
+            displayItemProvider: displayItemProvider,
+            feedImageLoader: imageLoader)
+        
+        displayItemProvider.imageLoaderDelegate = imageLoader
+        paginatorStateProvider.delegate = presenter
+        
+        viewController.output = presenter
+        presenter.viewInput = viewController
+        
+        return presenter
+    }
 }

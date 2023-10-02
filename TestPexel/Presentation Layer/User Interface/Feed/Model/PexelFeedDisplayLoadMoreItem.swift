@@ -9,7 +9,8 @@ import Foundation
 import UIKit.UIView
 
 struct PexelFeedDisplayLoadMoreItem: PexelFeedDisplayItem {
-    var cellType: UIView.Type { PexelFeedLoadMoreTableViewCell.self }
+    let id: String = UUID().uuidString
     
+    var cellType: UIView.Type { PexelFeedLoadMoreTableViewCell.self }
     var onNextLoad: () -> Void
 }

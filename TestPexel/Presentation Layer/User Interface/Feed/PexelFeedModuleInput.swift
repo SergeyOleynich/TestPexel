@@ -9,4 +9,5 @@ import Foundation
 
 protocol PexelFeedModuleInput {
     var viewInput: PexelFeedViewInput? { get set }
+    var router: PexelFeedRouter? { get set }
 }

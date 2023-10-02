@@ -16,6 +16,7 @@ protocol PexelFeedDisplayPhotographerItemDelegate: AnyObject {
 struct PexelFeedDisplayPhotographerItem: PexelFeedDisplayItem {
     var cellType: UIView.Type { PexelFeedTableViewCell.self }
     
+    let id: String
     let title: String
     let imageUrl: URL?
     let imageSize: CGSize

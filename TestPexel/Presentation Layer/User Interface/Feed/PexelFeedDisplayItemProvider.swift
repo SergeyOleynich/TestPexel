@@ -18,6 +18,7 @@ final class PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
     
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem {
         var displayItem = PexelFeedDisplayPhotographerItem(
+            id: "\(responseModel.id)",
             title: responseModel.photographerName,
             imageUrl: responseModel.src.mediumUrl,
             imageSize: responseModel.size)

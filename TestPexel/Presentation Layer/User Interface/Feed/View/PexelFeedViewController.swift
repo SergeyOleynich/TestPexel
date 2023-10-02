@@ -47,11 +47,18 @@ extension PexelFeedViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(
             withIdentifier: String(describing: displayModel.cellType),
-            for: indexPath
-        )
+            for: indexPath)
         
         (cell as? AnyTableViewCell)?.setupAny(model: displayModel)
         
         return cell
+    }
+}
+
+extension PexelFeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = output.items[indexPath.row]
+        
+        output.onSelected(item: selectedItem)
     }
 }
