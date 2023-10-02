@@ -9,8 +9,16 @@ import Foundation
 
 struct PexelFeedResponsePhotoItem {
     let id: Int
+    let width: Int
+    let height: Int
     let photographerName: String
     let src: PexelFeedResponseSrcItem
+}
+
+// MARK: - Computed Properties
+
+extension PexelFeedResponsePhotoItem {
+    var size: CGSize { .init(width: width, height: height) }
 }
 
 // MARK: - Codable
@@ -20,6 +28,8 @@ extension PexelFeedResponsePhotoItem: Codable {
         case id
         case photographerName = "photographer"
         case src
+        case width
+        case height
     }
 }
 

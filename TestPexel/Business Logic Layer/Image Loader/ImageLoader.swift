@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 protocol ImageLoader: AnyObject {
     func loadImage(for url: URL, completion: @escaping (UIImage?, URL) -> Void)

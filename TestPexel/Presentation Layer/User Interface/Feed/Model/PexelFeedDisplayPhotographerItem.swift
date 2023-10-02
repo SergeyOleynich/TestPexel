@@ -18,6 +18,7 @@ struct PexelFeedDisplayPhotographerItem: PexelFeedDisplayItem {
     
     let title: String
     let imageUrl: URL?
+    let imageSize: CGSize
     
     weak var delegate: PexelFeedDisplayPhotographerItemDelegate?
 }
