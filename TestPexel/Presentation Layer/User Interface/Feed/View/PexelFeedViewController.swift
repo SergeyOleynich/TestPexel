@@ -30,7 +30,7 @@ final class PexelFeedViewController: UIViewController {
         
         let displayItemProvider = PexelFeedDisplayItemProviderImpl()
         
-        let imageLoader = ImageLoaderImpl()
+        let imageLoader = CachedImageLoaderImpl(decoratee: ImageLoaderImpl())
         
         let presenter = PexelFeedPresenter(
             dataProvider: dataProvider,

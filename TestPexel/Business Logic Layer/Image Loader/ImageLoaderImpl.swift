@@ -18,16 +18,39 @@ final class ImageLoaderImpl: ImageLoader {
                 }
                 return
             }
-            
-            DispatchQueue.main.async {
-                completion(image, response?.url ?? url)
-            }
+                        
+            completion(image, response?.url ?? url)
         }
         
         dataTask.resume()
     }
 }
 
+final class CachedImageLoaderImpl: ImageLoader {
+    private let decoratee: ImageLoader
+    private let cache: NSCache<NSString, UIImage> = .init()
+    
+    init(decoratee: ImageLoader) {
+        self.decoratee = decoratee
+    }
+    
+    func loadImage(for url: URL, completion: @escaping (UIImage?, URL) -> Void) {
+        if let cachedImage = cache.object(forKey: url.absoluteString as NSString) {
+            completion(cachedImage, url)
+            return
+        }
+        
+        decoratee.loadImage(for: url) {[weak self] image1, url1 in
+            if let image1 = image1 {
+                self?.cache.setObject(image1, forKey: url1.absoluteString as NSString)
+            }
+            
+            completion(image1, url1)
+        }
+    }
+}
+
 // MARK: - PexelFeedDisplayPhotographerItemDelegate
 
 extension ImageLoaderImpl: PexelFeedDisplayPhotographerItemDelegate { }
+extension CachedImageLoaderImpl: PexelFeedDisplayPhotographerItemDelegate { }
