@@ -13,16 +13,16 @@ final class PexelFeedPresenter: PexelFeedModuleInput {
     private var inputDataSource: [PexelFeedDisplayItem] = []
     private let dataProvider: PexelFeedDataProvider
     private let displayItemProvider: PexelFeedDisplayItemProvider
-    private let imageLoader: ImageLoader
+    private let feedImageLoader: PexelFeedImageLoader
     
     init(
         dataProvider: PexelFeedDataProvider,
         displayItemProvider: PexelFeedDisplayItemProvider,
-        imageLoader: ImageLoader
+        feedImageLoader: PexelFeedImageLoader
     ) {
         self.dataProvider = dataProvider
         self.displayItemProvider = displayItemProvider
-        self.imageLoader = imageLoader
+        self.feedImageLoader = feedImageLoader
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit.UIView
 import UIKit.UIImage
 
 protocol PexelFeedDisplayPhotographerItemDelegate: AnyObject {
-    func loadImage(for url: URL, completion: @escaping (UIImage?, URL) -> Void)
+    func loadImage(for url: URL, in size: CGSize, radius: CGFloat, completion: @escaping (UIImage?, URL) -> Void)
 }
 
 struct PexelFeedDisplayPhotographerItem: PexelFeedDisplayItem {

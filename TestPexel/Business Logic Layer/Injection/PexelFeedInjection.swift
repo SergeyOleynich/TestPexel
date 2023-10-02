@@ -13,7 +13,7 @@ protocol PexelFeedInjection {
     var networkService: NetworkService { get }
     var paginatorStateProvider: PexelFeedPaginator { get }
     var displayItemProvider: PexelFeedDisplayItemProvider { get }
-    var imageLoader: ImageLoader { get }
+    var imageLoader: PexelFeedImageLoader { get }
     var resourceFactory: PexelFeedResourceFactory { get }
     var dataProvider: PexelFeedDataProvider { get }
 }
@@ -25,8 +25,10 @@ struct PexelFeedInjectionImpl: PexelFeedInjection {
         PexelFeedDisplayItemProviderImpl()
     }
     
-    var imageLoader: ImageLoader {
-        CachedImageLoaderImpl(decoratee: ImageLoaderImpl())
+    var imageLoader: PexelFeedImageLoader {
+        PexelFeedImageLoaderImpl(
+            decoratee: CachedImageLoaderImpl(
+                decoratee: ImageLoaderImpl()))
     }
     
     var networkService: NetworkService {

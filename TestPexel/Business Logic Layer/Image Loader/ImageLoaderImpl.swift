@@ -40,12 +40,12 @@ final class CachedImageLoaderImpl: ImageLoader {
             return
         }
         
-        decoratee.loadImage(for: url) {[weak self] image1, url1 in
-            if let image1 = image1 {
-                self?.cache.setObject(image1, forKey: url1.absoluteString as NSString)
+        decoratee.loadImage(for: url) {[weak self] image, imageUrl in
+            if let image = image {
+                self?.cache.setObject(image, forKey: imageUrl.absoluteString as NSString)
             }
             
-            completion(image1, url1)
+            completion(image, imageUrl)
         }
     }
 }

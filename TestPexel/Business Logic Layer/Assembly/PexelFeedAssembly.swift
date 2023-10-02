@@ -31,7 +31,7 @@ struct PexelFeedAssembly {
         let presenter = PexelFeedPresenter(
             dataProvider: dataProvider,
             displayItemProvider: displayItemProvider,
-            imageLoader: imageLoader)
+            feedImageLoader: imageLoader)
         
         displayItemProvider.imageLoaderDelegate = imageLoader
         paginatorStateProvider.delegate = presenter
