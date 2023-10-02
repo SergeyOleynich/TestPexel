@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol PexelFeedViewInput: AnyObject {
+protocol PexelFeedViewInput: ViewInput {
     func didLoadItems()
 }

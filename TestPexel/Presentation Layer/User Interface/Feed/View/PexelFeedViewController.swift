@@ -15,34 +15,6 @@ final class PexelFeedViewController: UIViewController {
     
     var output: PexelFeedViewOutput!
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-                
-        let network = RESTService()
-        
-        let paginatorStateProvider = PexelFeedPaginator()
-        
-        let dataProvider = PexelFeedDataProviderPaginationDecorator(
-            decoratee: PexelFeedDataProviderImpl(
-                network: network,
-                resourceFactory: PexelFeedResourceFactoryImpl()),
-            paginator: paginatorStateProvider)
-        
-        let displayItemProvider = PexelFeedDisplayItemProviderImpl()
-        
-        let imageLoader = CachedImageLoaderImpl(decoratee: ImageLoaderImpl())
-        
-        let presenter = PexelFeedPresenter(
-            dataProvider: dataProvider,
-            displayItemProvider: displayItemProvider,
-            imageLoader: imageLoader)
-        
-        displayItemProvider.imageLoaderDelegate = imageLoader
-        paginatorStateProvider.delegate = presenter
-        presenter.viewInput = self
-        output = presenter
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

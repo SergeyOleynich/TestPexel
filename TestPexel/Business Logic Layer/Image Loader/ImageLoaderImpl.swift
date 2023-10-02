@@ -49,8 +49,3 @@ final class CachedImageLoaderImpl: ImageLoader {
         }
     }
 }
-
-// MARK: - PexelFeedDisplayPhotographerItemDelegate
-
-extension ImageLoaderImpl: PexelFeedDisplayPhotographerItemDelegate { }
-extension CachedImageLoaderImpl: PexelFeedDisplayPhotographerItemDelegate { }

@@ -8,6 +8,8 @@
 import Foundation
 
 protocol PexelFeedDisplayItemProvider {
+    var imageLoaderDelegate: PexelFeedDisplayPhotographerItemDelegate? { get set }
+    
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem
 }
 

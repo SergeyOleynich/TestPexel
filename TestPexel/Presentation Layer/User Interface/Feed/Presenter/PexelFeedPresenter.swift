@@ -7,9 +7,7 @@
 
 import Foundation
 
-import UIKit.UIImage
-
-final class PexelFeedPresenter {
+final class PexelFeedPresenter: PexelFeedModuleInput {
     weak var viewInput: PexelFeedViewInput?
     
     private var inputDataSource: [PexelFeedDisplayItem] = []
@@ -55,25 +53,6 @@ extension PexelFeedPresenter: PexelFeedPaginatorDelegate {
         )
     }
 }
-
-//// MARK: - PexelFeedDisplayPhotographerItemDelegate
-//
-//extension PexelFeedPresenter: PexelFeedDisplayPhotographerItemDelegate {
-//    func loadImage(for url: URL, completion: @escaping (UIImage) -> Void) {
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            do {
-//                let imageData = try Data(contentsOf: url)
-//                if let image = UIImage(data: imageData) {
-//                    DispatchQueue.main.async {
-//                        completion(image)
-//                    }
-//                }
-//            } catch {
-//                print("image load error: \(error)")
-//            }
-//        }
-//    }
-//}
 
 // MARK: - Private
 

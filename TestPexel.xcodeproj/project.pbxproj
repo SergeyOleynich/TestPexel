@@ -38,6 +38,13 @@
 		7DFC411C2ACACAE600FE71D2 /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC411B2ACACAE600FE71D2 /* TableItem.swift */; };
 		7DFC41202ACADD7600FE71D2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC411F2ACADD7600FE71D2 /* ImageLoader.swift */; };
 		7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */; };
+		7DFC41252ACB1F0700FE71D2 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41242ACB1F0700FE71D2 /* ApplicationAssembly.swift */; };
+		7DFC41272ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41262ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift */; };
+		7DFC412A2ACB311400FE71D2 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41292ACB311400FE71D2 /* ApplicationCoordinator.swift */; };
+		7DFC412C2ACB312300FE71D2 /* PexelFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC412B2ACB312300FE71D2 /* PexelFeedCoordinator.swift */; };
+		7DFC412E2ACB314900FE71D2 /* PexelFeedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC412D2ACB314900FE71D2 /* PexelFeedAssembly.swift */; };
+		7DFC41302ACB319400FE71D2 /* ViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC412F2ACB319400FE71D2 /* ViewInput.swift */; };
+		7DFC41332ACB3A2900FE71D2 /* PexelFeedInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41322ACB3A2900FE71D2 /* PexelFeedInjection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +81,13 @@
 		7DFC411B2ACACAE600FE71D2 /* TableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItem.swift; sourceTree = "<group>"; };
 		7DFC411F2ACADD7600FE71D2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderImpl.swift; sourceTree = "<group>"; };
+		7DFC41242ACB1F0700FE71D2 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		7DFC41262ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedModuleInput.swift; sourceTree = "<group>"; };
+		7DFC41292ACB311400FE71D2 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		7DFC412B2ACB312300FE71D2 /* PexelFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedCoordinator.swift; sourceTree = "<group>"; };
+		7DFC412D2ACB314900FE71D2 /* PexelFeedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedAssembly.swift; sourceTree = "<group>"; };
+		7DFC412F2ACB319400FE71D2 /* ViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInput.swift; sourceTree = "<group>"; };
+		7DFC41322ACB3A2900FE71D2 /* PexelFeedInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedInjection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +174,7 @@
 				7DFC40FC2ACAC2E200FE71D2 /* Model */,
 				7DFC40E62AC60D8D00FE71D2 /* Presenter */,
 				7DFC40E72AC60D8D00FE71D2 /* View */,
+				7DFC41262ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -262,6 +277,7 @@
 		7DFC41142ACACA7D00FE71D2 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC41282ACB310400FE71D2 /* Coordinator */,
 				7DFC41152ACACA9E00FE71D2 /* UI Elements */,
 				7DFC40E02AC60C8F00FE71D2 /* User Interface */,
 			);
@@ -272,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				7DFC41162ACACAB800FE71D2 /* TableViewCell */,
+				7DFC412F2ACB319400FE71D2 /* ViewInput.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -289,6 +306,8 @@
 		7DFC411D2ACADD6600FE71D2 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC41312ACB3A2200FE71D2 /* Injection */,
+				7DFC41232ACB1EE500FE71D2 /* Assembly */,
 				7DFC411E2ACADD6600FE71D2 /* Image Loader */,
 			);
 			path = "Business Logic Layer";
@@ -301,6 +320,32 @@
 				7DFC41212ACADD8A00FE71D2 /* ImageLoaderImpl.swift */,
 			);
 			path = "Image Loader";
+			sourceTree = "<group>";
+		};
+		7DFC41232ACB1EE500FE71D2 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41242ACB1F0700FE71D2 /* ApplicationAssembly.swift */,
+				7DFC412D2ACB314900FE71D2 /* PexelFeedAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		7DFC41282ACB310400FE71D2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41292ACB311400FE71D2 /* ApplicationCoordinator.swift */,
+				7DFC412B2ACB312300FE71D2 /* PexelFeedCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7DFC41312ACB3A2200FE71D2 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41322ACB3A2900FE71D2 /* PexelFeedInjection.swift */,
+			);
+			path = Injection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +429,9 @@
 				7DFC41002ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift in Sources */,
 				7DFC41032ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift in Sources */,
 				7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */,
+				7DFC41272ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift in Sources */,
+				7DFC412C2ACB312300FE71D2 /* PexelFeedCoordinator.swift in Sources */,
+				7DFC41332ACB3A2900FE71D2 /* PexelFeedInjection.swift in Sources */,
 				7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */,
 				7DFC410D2ACAC58F00FE71D2 /* PexelFeedResponseItem.swift in Sources */,
 				7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */,
@@ -393,8 +441,11 @@
 				7DFC40A72AC5675A00FE71D2 /* AppDelegate.swift in Sources */,
 				7DFC40FB2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift in Sources */,
 				7DFC40A92AC5675A00FE71D2 /* SceneDelegate.swift in Sources */,
+				7DFC412A2ACB311400FE71D2 /* ApplicationCoordinator.swift in Sources */,
 				7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */,
 				7DFC410F2ACAC5F000FE71D2 /* PexelFeedResponsePhotoItem.swift in Sources */,
+				7DFC412E2ACB314900FE71D2 /* PexelFeedAssembly.swift in Sources */,
+				7DFC41302ACB319400FE71D2 /* ViewInput.swift in Sources */,
 				7DFC410A2ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift in Sources */,
 				7DFC41202ACADD7600FE71D2 /* ImageLoader.swift in Sources */,
 				7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */,
@@ -403,6 +454,7 @@
 				7DFC411A2ACACAD200FE71D2 /* AnyTableViewCell.swift in Sources */,
 				7DFC40FE2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift in Sources */,
 				7DFC41132ACAC6EC00FE71D2 /* PexelFeedDisplayItemProvider.swift in Sources */,
+				7DFC41252ACB1F0700FE71D2 /* ApplicationAssembly.swift in Sources */,
 				7DFC41182ACACABF00FE71D2 /* TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +608,6 @@
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -589,7 +640,6 @@
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

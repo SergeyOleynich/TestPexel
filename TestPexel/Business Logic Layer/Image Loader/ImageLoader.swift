@@ -8,6 +8,6 @@
 import Foundation
 import UIKit.UIImage
 
-protocol ImageLoader: AnyObject {
+protocol ImageLoader: PexelFeedDisplayPhotographerItemDelegate {
     func loadImage(for url: URL, completion: @escaping (UIImage?, URL) -> Void)
 }
