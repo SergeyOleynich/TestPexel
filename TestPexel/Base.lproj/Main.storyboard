@@ -74,6 +74,28 @@
                                             <outlet property="title" destination="1sp-GI-3Nu" id="RUi-pH-hBd"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PexelFeedLoadMoreTableViewCell" rowHeight="70" id="30D-0d-i4m" customClass="PexelFeedLoadMoreTableViewCell" customModule="TestPexel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="372" width="393" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="30D-0d-i4m" id="QMT-2Y-YWT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OqG-Ul-1AX">
+                                                    <rect key="frame" x="178" y="11" width="37" height="48"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OqG-Ul-1AX" firstAttribute="centerX" secondItem="QMT-2Y-YWT" secondAttribute="centerX" id="2hx-T8-JEa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OqG-Ul-1AX" secondAttribute="bottom" id="9ii-9A-wfp"/>
+                                                <constraint firstItem="OqG-Ul-1AX" firstAttribute="top" secondItem="QMT-2Y-YWT" secondAttribute="topMargin" id="tiX-fC-Wy4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="16" left="8" bottom="16" right="8"/>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="OqG-Ul-1AX" id="ty0-6V-ZlD"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="rNs-pB-Nwi"/>

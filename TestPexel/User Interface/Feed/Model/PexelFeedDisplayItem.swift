@@ -6,9 +6,8 @@
 //
 
 import Foundation
+import UIKit.UIView
 
-struct PexelFeedDisplayItem {
-    let title: String
-    let iconUrl: URL
-    let imageUrl: URL
+protocol PexelFeedDisplayItem: TableItem {
+    var cellType: UIView.Type { get }
 }

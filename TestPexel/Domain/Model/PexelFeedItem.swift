@@ -7,19 +7,42 @@
 
 import Foundation
 
-struct PexelFeedResponseItem: Codable {
+struct PexelFeedResponseItem {
+    let page: Int
+    let perPage: Int
+    let totalResults: Int
+    let nextPage: String?
     let photos: [PexelFeedItem]
+}
+
+extension PexelFeedResponseItem: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case page
+        case perPage = "per_page"
+        case totalResults = "total_results"
+        case nextPage = "next_page"
+        case photos
+    }
 }
 
 struct PexelFeedItem {
     let id: Int
-    let photographer: String
+    let photographerName: String
+    let src: PexelFeedSrcItem
+}
+
+struct PexelFeedSrcItem: Codable {
+    let medium: String
 }
 
 // MARK: - Codable
 
 extension PexelFeedItem: Codable {
-    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case photographerName = "photographer"
+        case src
+    }
 }
 
 // MARK: - Equatable
@@ -29,35 +52,3 @@ extension PexelFeedItem: Equatable {
         return lhs.id == rhs.id
     }
 }
-
-/*
- {
-   "page": 1,
-   "per_page": 1,
-   "photos": [
-     {
-       "id": 2880507,
-       "width": 4000,
-       "height": 6000,
-       "url": "https://www.pexels.com/photo/woman-in-white-long-sleeved-top-and-skirt-standing-on-field-2880507/",
-       "photographer": "Deden Dicky Ramdhani",
-       "photographer_url": "https://www.pexels.com/@drdeden88",
-       "photographer_id": 1378810,
-       "avg_color": "#7E7F7B",
-       "src": {
-         "original": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg",
-         "large2x": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-         "large": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-         "medium": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&h=350",
-         "small": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&h=130",
-         "portrait": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
-         "landscape": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
-         "tiny": "https://images.pexels.com/photos/2880507/pexels-photo-2880507.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280"
-       },
-       "liked": false,
-       "alt": "Brown Rocks During Golden Hour"
-     }
-   ],
-   "next_page": "https://api.pexels.com/v1/curated/?page=2&per_page=1"
- }
- */

@@ -23,6 +23,15 @@
 		7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */; };
 		7DFC40F12AC618E600FE71D2 /* PexelFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */; };
 		7DFC40F32AC61F9F00FE71D2 /* FeedMock.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40F22AC61F9F00FE71D2 /* FeedMock.txt */; };
+		7DFC40F62AC9A5BA00FE71D2 /* PexelFeedResourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40F52AC9A5BA00FE71D2 /* PexelFeedResourceFactory.swift */; };
+		7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40F82AC9A62600FE71D2 /* PexelFeedDataProvider.swift */; };
+		7DFC40FB2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40FA2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift */; };
+		7DFC40FE2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40FD2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift */; };
+		7DFC41002ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40FF2ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift */; };
+		7DFC41032ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41022ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift */; };
+		7DFC41062ACAC3C000FE71D2 /* PexelFeedPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41052ACAC3C000FE71D2 /* PexelFeedPaginator.swift */; };
+		7DFC41082ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41072ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift */; };
+		7DFC410A2ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41092ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +53,15 @@
 		7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDisplayItem.swift; sourceTree = "<group>"; };
 		7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedItem.swift; sourceTree = "<group>"; };
 		7DFC40F22AC61F9F00FE71D2 /* FeedMock.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedMock.txt; sourceTree = "<group>"; };
+		7DFC40F52AC9A5BA00FE71D2 /* PexelFeedResourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedResourceFactory.swift; sourceTree = "<group>"; };
+		7DFC40F82AC9A62600FE71D2 /* PexelFeedDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDataProvider.swift; sourceTree = "<group>"; };
+		7DFC40FA2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedLoadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		7DFC40FD2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDisplayPhotographerItem.swift; sourceTree = "<group>"; };
+		7DFC40FF2ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDisplayLoadMoreItem.swift; sourceTree = "<group>"; };
+		7DFC41022ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDataProviderImpl.swift; sourceTree = "<group>"; };
+		7DFC41052ACAC3C000FE71D2 /* PexelFeedPaginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedPaginator.swift; sourceTree = "<group>"; };
+		7DFC41072ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedDataProviderPaginationDecorator.swift; sourceTree = "<group>"; };
+		7DFC41092ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedPaginatorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +145,8 @@
 		7DFC40E12AC60C9D00FE71D2 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC41012ACAC36D00FE71D2 /* Domain */,
+				7DFC40FC2ACAC2E200FE71D2 /* Model */,
 				7DFC40E62AC60D8D00FE71D2 /* Presenter */,
 				7DFC40E72AC60D8D00FE71D2 /* View */,
 			);
@@ -149,7 +169,7 @@
 				7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */,
 				7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */,
 				7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */,
-				7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */,
+				7DFC40FA2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +177,7 @@
 		7DFC40EE2AC618CC00FE71D2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC40F42AC9A5AE00FE71D2 /* Resource */,
 				7DFC40EF2AC618D700FE71D2 /* Model */,
 			);
 			path = Domain;
@@ -168,6 +189,52 @@
 				7DFC40F02AC618E600FE71D2 /* PexelFeedItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7DFC40F42AC9A5AE00FE71D2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40F52AC9A5BA00FE71D2 /* PexelFeedResourceFactory.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7DFC40F72AC9A61900FE71D2 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40F82AC9A62600FE71D2 /* PexelFeedDataProvider.swift */,
+				7DFC41022ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift */,
+				7DFC41072ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		7DFC40FC2ACAC2E200FE71D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC40EC2AC6162000FE71D2 /* PexelFeedDisplayItem.swift */,
+				7DFC40FF2ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift */,
+				7DFC40FD2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DFC41012ACAC36D00FE71D2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41042ACAC3B100FE71D2 /* Pagination */,
+				7DFC40F72AC9A61900FE71D2 /* DataProvider */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7DFC41042ACAC3B100FE71D2 /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41052ACAC3C000FE71D2 /* PexelFeedPaginator.swift */,
+				7DFC41092ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift */,
+			);
+			path = Pagination;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,16 +313,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFC40F62AC9A5BA00FE71D2 /* PexelFeedResourceFactory.swift in Sources */,
+				7DFC41062ACAC3C000FE71D2 /* PexelFeedPaginator.swift in Sources */,
 				7DFC40EB2AC60DC700FE71D2 /* PexelFeedViewInput.swift in Sources */,
+				7DFC41002ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift in Sources */,
+				7DFC41032ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift in Sources */,
 				7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */,
 				7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */,
+				7DFC41082ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift in Sources */,
 				7DFC40F12AC618E600FE71D2 /* PexelFeedItem.swift in Sources */,
 				7DFC40E32AC60CC700FE71D2 /* MockURLSessionProtocol.swift in Sources */,
 				7DFC40BE2AC5751200FE71D2 /* PexelFeedViewController.swift in Sources */,
 				7DFC40A72AC5675A00FE71D2 /* AppDelegate.swift in Sources */,
+				7DFC40FB2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift in Sources */,
 				7DFC40A92AC5675A00FE71D2 /* SceneDelegate.swift in Sources */,
+				7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */,
+				7DFC410A2ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift in Sources */,
 				7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */,
 				7DFC40E92AC60DA200FE71D2 /* PexelFeedViewOutput.swift in Sources */,
+				7DFC40FE2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

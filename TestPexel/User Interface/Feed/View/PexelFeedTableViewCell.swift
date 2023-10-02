@@ -7,15 +7,35 @@
 
 import UIKit
 
-final class PexelFeedTableViewCell: UITableViewCell {
+protocol TableItem {
+    
+}
+
+protocol AnyTableViewCell {
+    func setupAny(model: TableItem)
+}
+
+protocol TableViewCell: AnyTableViewCell {
+    associatedtype Model
+    
+    func setup(with model: Model)
+}
+
+extension TableViewCell {
+    func setupAny(model: TableItem) {
+        guard let model = model as? Model else { preconditionFailure() }
+        
+        setup(with: model)
+    }
+}
+
+final class PexelFeedTableViewCell: UITableViewCell, TableViewCell {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var icon: UIImageView!
     @IBOutlet private weak var feedImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        title.text = "Test"
     }
     
     override func prepareForReuse() {
@@ -26,7 +46,7 @@ final class PexelFeedTableViewCell: UITableViewCell {
         feedImage.image = nil
     }
     
-    func setup(with item: PexelFeedDisplayItem) {
-        title.text = item.title
+    func setup(with model: PexelFeedDisplayPhotographerItem) {
+        title.text = model.title
     }
 }
