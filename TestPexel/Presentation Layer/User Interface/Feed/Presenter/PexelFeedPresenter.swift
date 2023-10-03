@@ -12,7 +12,7 @@ protocol PexelFeedRouter {
 }
 
 enum PexelFeedCoordinatorNavigationAction {
-    case detail(id: String)
+    case detail(displayItem: DetailFeedDisplayItem)
 }
 
 final class PexelFeedPresenter: PexelFeedModuleInput {
@@ -21,6 +21,7 @@ final class PexelFeedPresenter: PexelFeedModuleInput {
     
     private var test: [PexelFeedResponsePhotoItem] = []
     private var inputDataSource: [PexelFeedDisplayItem] = []
+    private var responseDataSource: [PexelFeedResponsePhotoItem] = []
     private let dataProvider: PexelFeedDataProvider
     private let displayItemProvider: PexelFeedDisplayItemProvider
     private let feedImageLoader: PexelFeedImageLoader
@@ -42,11 +43,19 @@ extension PexelFeedPresenter: PexelFeedViewOutput {
     var items: [PexelFeedDisplayItem] { inputDataSource }
     
     func onViewDidLoad() {
-        provideData(for: 1)
+        provideData(for: 0)
     }
     
     func onSelected(item: PexelFeedDisplayItem) {
-        router?.navigate(to: .detail(id: item.id))
+        guard let detailDisplayItem = displayItemProvider.provideDetailDisplayItem(for: item, from: responseDataSource) else { return }
+
+        router?.navigate(to: .detail(displayItem: detailDisplayItem))
+    }
+    
+    func onRefreshList() {
+        inputDataSource.removeAll()
+        
+        provideData(for: 0)
     }
 }
 
@@ -81,6 +90,7 @@ private extension PexelFeedPresenter {
                 
                 let displayItems = feedResponseItem.photos.compactMap { self?.displayItemProvider.provideDisplayItem(from: $0) }
                 
+                self?.responseDataSource.append(contentsOf: feedResponseItem.photos)
                 self?.inputDataSource.insert(contentsOf: displayItems, at: loadMoreIndex)
                 
                 self?.viewInput?.didLoadItems()

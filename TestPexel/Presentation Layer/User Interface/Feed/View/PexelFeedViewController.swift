@@ -12,24 +12,27 @@ import CustomNetworkService
 final class PexelFeedViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
+
     var output: PexelFeedViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
+        setup(tableView: tableView)
+        setup(pullToRefresh: refreshControl)
         
         output.onViewDidLoad()
     }
 }
 
-// MARK: -
+// MARK: - PexelFeedViewInput
 
 extension PexelFeedViewController: PexelFeedViewInput {
     func didLoadItems() {
         DispatchQueue.main.async {[weak self] in
+            if self?.refreshControl.isRefreshing == true { self?.refreshControl.endRefreshing() }
+            
             self?.tableView.reloadData()
         }
     }
@@ -55,10 +58,37 @@ extension PexelFeedViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension PexelFeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let selectedItem = output.items[indexPath.row]
         
         output.onSelected(item: selectedItem)
+    }
+}
+
+// MARK: - IBAction
+
+private extension PexelFeedViewController {
+    @objc func refreshList(_ refreshControl: UIRefreshControl) {
+        output.onRefreshList()
+    }
+}
+
+// MARK: - Private
+
+private extension PexelFeedViewController {
+    func setup(tableView: UITableView) {
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func setup(pullToRefresh: UIRefreshControl) {
+        pullToRefresh.addTarget(self, action: #selector(refreshList(_:)), for: .valueChanged)
+        
+        tableView.addSubview(pullToRefresh)
     }
 }

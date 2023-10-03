@@ -8,6 +8,7 @@
 import Foundation
 
 struct PexelFeedResponseSrcItem {
+    let original: String
     let medium: String
 }
 

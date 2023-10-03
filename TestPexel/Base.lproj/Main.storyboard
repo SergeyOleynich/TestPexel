@@ -106,6 +106,48 @@
             </objects>
             <point key="canvasLocation" x="1055.7251908396945" y="-2.1126760563380285"/>
         </scene>
+        <!--Detail Feed View Controller-->
+        <scene sceneID="38O-ut-u6M">
+            <objects>
+                <viewController storyboardIdentifier="DetailFeedViewController" id="Yud-3o-4SB" customClass="DetailFeedViewController" customModule="TestPexel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p7F-ey-LDX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NY6-Hw-ZDV">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-yR-ZTJ">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBq-3X-PTG">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rQ1-Vr-spK"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vbg-eR-2t4"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yud-3o-4SB" id="DVB-ZG-nxZ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NgS-eh-iY2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NY6-Hw-ZDV" firstAttribute="centerY" secondItem="p7F-ey-LDX" secondAttribute="centerY" id="tvp-Ak-6oS"/>
+                            <constraint firstItem="NY6-Hw-ZDV" firstAttribute="centerX" secondItem="p7F-ey-LDX" secondAttribute="centerX" id="xse-RY-x9H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="nBq-3X-PTG" id="qt5-Yn-FTU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0A-Td-zr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843.5114503816794" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

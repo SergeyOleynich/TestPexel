@@ -17,7 +17,8 @@ final class PexelFeedDataProviderPaginationDecorator: PexelFeedDataProvider {
     }
     
     func provideData(for page: Int, completion: @escaping ((Result<PexelFeedResponseItem, Error>) -> Void)) {
-        if paginator.state == .loadMore {
+        if page == 0 || paginator.state == .loadMore {
+            print("start loading")
             paginator.apply(event: .didStartLoading)
             decoratee.provideData(for: page) {[weak self] response in
                 switch response {

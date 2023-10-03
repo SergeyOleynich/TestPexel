@@ -12,4 +12,5 @@ protocol PexelFeedViewOutput {
     
     func onViewDidLoad()
     func onSelected(item: PexelFeedDisplayItem)
+    func onRefreshList()
 }

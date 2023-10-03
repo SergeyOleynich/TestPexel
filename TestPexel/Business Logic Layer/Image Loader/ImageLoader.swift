@@ -10,5 +10,6 @@ import UIKit.UIImage
 
 protocol ImageLoader {
     func loadImage(for url: URL, completion: @escaping (UIImage?, URL) -> Void)
+    func cancelLoading(for url: URL)
 }
 

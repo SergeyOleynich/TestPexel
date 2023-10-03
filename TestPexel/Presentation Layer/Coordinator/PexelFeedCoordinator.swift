@@ -31,8 +31,12 @@ final class FeedCoordinatorImpl: FeedCoordinator {
 extension FeedCoordinatorImpl: PexelFeedRouter {
     func navigate(to action: PexelFeedCoordinatorNavigationAction) {
         switch action {
-        case .detail(let id):
-            guard let viewController = assembly.detailFeedModuleInput.viewInput?.viewController else { return }
+        case let .detail(feedItem):
+            var detailFeedModuleInput = assembly.detailFeedModuleInput(feedItem)
+            
+            guard let viewController = detailFeedModuleInput.viewInput?.viewController else { return }
+            
+            detailFeedModuleInput.router = self
             assembly.navigationController.pushViewController(viewController, animated: true)
         }
     }

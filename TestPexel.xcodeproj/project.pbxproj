@@ -48,6 +48,12 @@
 		7DFC41362ACB436400FE71D2 /* PexelFeedImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41352ACB436400FE71D2 /* PexelFeedImageLoader.swift */; };
 		7DFC41382ACB45B600FE71D2 /* PexelFeedImageLoaderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41372ACB45B600FE71D2 /* PexelFeedImageLoaderImpl.swift */; };
 		7DFC413B2ACB47C900FE71D2 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC413A2ACB47C900FE71D2 /* UIImage+Extension.swift */; };
+		7DFC413E2ACB4F7700FE71D2 /* DetailFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC413D2ACB4F7700FE71D2 /* DetailFeedViewController.swift */; };
+		7DFC41422ACB51A500FE71D2 /* DetailFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41412ACB51A500FE71D2 /* DetailFeedPresenter.swift */; };
+		7DFC41452ACB51FB00FE71D2 /* DetailFeedDisplayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41442ACB51FB00FE71D2 /* DetailFeedDisplayItem.swift */; };
+		7DFC41472ACB52D100FE71D2 /* DetailFeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41462ACB52D100FE71D2 /* DetailFeedViewInput.swift */; };
+		7DFC41492ACB52E500FE71D2 /* DetailFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */; };
+		7DFC414B2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +100,12 @@
 		7DFC41352ACB436400FE71D2 /* PexelFeedImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedImageLoader.swift; sourceTree = "<group>"; };
 		7DFC41372ACB45B600FE71D2 /* PexelFeedImageLoaderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedImageLoaderImpl.swift; sourceTree = "<group>"; };
 		7DFC413A2ACB47C900FE71D2 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		7DFC413D2ACB4F7700FE71D2 /* DetailFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewController.swift; sourceTree = "<group>"; };
+		7DFC41412ACB51A500FE71D2 /* DetailFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedPresenter.swift; sourceTree = "<group>"; };
+		7DFC41442ACB51FB00FE71D2 /* DetailFeedDisplayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedDisplayItem.swift; sourceTree = "<group>"; };
+		7DFC41462ACB52D100FE71D2 /* DetailFeedViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewInput.swift; sourceTree = "<group>"; };
+		7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewOutput.swift; sourceTree = "<group>"; };
+		7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelDetailFeedModuleInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,8 +389,46 @@
 		7DFC413C2ACB4F2500FE71D2 /* DetailFeed */ = {
 			isa = PBXGroup;
 			children = (
+				7DFC414D2ACB552300FE71D2 /* Domain */,
+				7DFC41432ACB51EF00FE71D2 /* Model */,
+				7DFC41402ACB519500FE71D2 /* Presenter */,
+				7DFC413F2ACB518700FE71D2 /* View */,
+				7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */,
 			);
 			path = DetailFeed;
+			sourceTree = "<group>";
+		};
+		7DFC413F2ACB518700FE71D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41462ACB52D100FE71D2 /* DetailFeedViewInput.swift */,
+				7DFC413D2ACB4F7700FE71D2 /* DetailFeedViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DFC41402ACB519500FE71D2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */,
+				7DFC41412ACB51A500FE71D2 /* DetailFeedPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7DFC41432ACB51EF00FE71D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DFC41442ACB51FB00FE71D2 /* DetailFeedDisplayItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DFC414D2ACB552300FE71D2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,11 +514,13 @@
 				7DFC41002ACAC2FB00FE71D2 /* PexelFeedDisplayLoadMoreItem.swift in Sources */,
 				7DFC41032ACAC37A00FE71D2 /* PexelFeedDataProviderImpl.swift in Sources */,
 				7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */,
+				7DFC413E2ACB4F7700FE71D2 /* DetailFeedViewController.swift in Sources */,
 				7DFC41272ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift in Sources */,
 				7DFC412C2ACB312300FE71D2 /* PexelFeedCoordinator.swift in Sources */,
 				7DFC41332ACB3A2900FE71D2 /* PexelFeedInjection.swift in Sources */,
 				7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */,
 				7DFC410D2ACAC58F00FE71D2 /* PexelFeedResponseItem.swift in Sources */,
+				7DFC41472ACB52D100FE71D2 /* DetailFeedViewInput.swift in Sources */,
 				7DFC40ED2AC6162000FE71D2 /* PexelFeedDisplayItem.swift in Sources */,
 				7DFC41082ACAC40600FE71D2 /* PexelFeedDataProviderPaginationDecorator.swift in Sources */,
 				7DFC41112ACAC63000FE71D2 /* PexelFeedResponseSrcItem.swift in Sources */,
@@ -476,6 +528,7 @@
 				7DFC40A72AC5675A00FE71D2 /* AppDelegate.swift in Sources */,
 				7DFC40FB2AC9B3F100FE71D2 /* PexelFeedLoadMoreTableViewCell.swift in Sources */,
 				7DFC40A92AC5675A00FE71D2 /* SceneDelegate.swift in Sources */,
+				7DFC414B2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift in Sources */,
 				7DFC412A2ACB311400FE71D2 /* ApplicationCoordinator.swift in Sources */,
 				7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */,
 				7DFC410F2ACAC5F000FE71D2 /* PexelFeedResponsePhotoItem.swift in Sources */,
@@ -483,15 +536,18 @@
 				7DFC412E2ACB314900FE71D2 /* PexelFeedAssembly.swift in Sources */,
 				7DFC41302ACB319400FE71D2 /* ViewInput.swift in Sources */,
 				7DFC410A2ACAC4A700FE71D2 /* PexelFeedPaginatorDelegate.swift in Sources */,
+				7DFC41452ACB51FB00FE71D2 /* DetailFeedDisplayItem.swift in Sources */,
 				7DFC41202ACADD7600FE71D2 /* ImageLoader.swift in Sources */,
 				7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */,
 				7DFC40E92AC60DA200FE71D2 /* PexelFeedViewOutput.swift in Sources */,
 				7DFC411C2ACACAE600FE71D2 /* TableItem.swift in Sources */,
 				7DFC411A2ACACAD200FE71D2 /* AnyTableViewCell.swift in Sources */,
+				7DFC41492ACB52E500FE71D2 /* DetailFeedViewOutput.swift in Sources */,
 				7DFC40FE2ACAC2F300FE71D2 /* PexelFeedDisplayPhotographerItem.swift in Sources */,
 				7DFC41132ACAC6EC00FE71D2 /* PexelFeedDisplayItemProvider.swift in Sources */,
 				7DFC41252ACB1F0700FE71D2 /* ApplicationAssembly.swift in Sources */,
 				7DFC41182ACACABF00FE71D2 /* TableViewCell.swift in Sources */,
+				7DFC41422ACB51A500FE71D2 /* DetailFeedPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -621,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -646,7 +702,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -678,7 +734,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

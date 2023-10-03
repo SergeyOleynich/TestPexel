@@ -11,6 +11,11 @@ protocol PexelFeedDisplayItemProvider {
     var imageLoaderDelegate: PexelFeedDisplayPhotographerItemDelegate? { get set }
     
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem
+    
+    func provideDetailDisplayItem(
+        for displayModel: PexelFeedDisplayItem,
+        from items: [PexelFeedResponsePhotoItem]
+    ) -> DetailFeedDisplayItem?
 }
 
 final class PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
@@ -26,5 +31,20 @@ final class PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
         displayItem.delegate = imageLoaderDelegate
         
         return displayItem
+    }
+    
+    func provideDetailDisplayItem(
+        for displayModel: PexelFeedDisplayItem,
+        from items: [PexelFeedResponsePhotoItem]
+    ) -> DetailFeedDisplayItem? {
+        guard let photographerItem = displayModel as? PexelFeedDisplayPhotographerItem else { return nil }
+        
+        return items
+            .first(where: { "\($0.id)" == photographerItem.id })
+            .map { DetailFeedDisplayItem(
+                id: "\($0.id)",
+                photographerName: $0.photographerName,
+                imageString: $0.src.original)
+            }
     }
 }
