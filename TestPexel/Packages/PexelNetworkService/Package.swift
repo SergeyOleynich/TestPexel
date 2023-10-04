@@ -6,7 +6,7 @@ import PackageDescription
 private let packageName = "PexelNetworkService"
 
 private enum Targets: String, CaseIterable {
-    case service = "CustomNetworkService"
+    case service = "PNetworkService"
 }
 
 let package = Package(

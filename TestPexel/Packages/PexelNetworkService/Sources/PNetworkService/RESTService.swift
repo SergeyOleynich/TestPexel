@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RESTService {
+struct RESTService {
     private let session: URLSession
     private let responseValidator: ResponseValidator
     
@@ -29,7 +29,7 @@ public struct RESTService {
 // MARK: - Network Service
 
 extension RESTService: NetworkService {
-    public func request<ResponseModel>(
+    func request<ResponseModel>(
         resource: Resource<ResponseModel>,
         response: @escaping (Result<ResponseModel, Error>) -> Void) {
             session.dataTask(with: resource.urlRequest) { data, urlResponse, error in

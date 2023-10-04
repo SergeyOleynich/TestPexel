@@ -1,5 +1,5 @@
 import XCTest
-@testable import CustomNetworkService
+@testable import PNetworkService
 
 final class PexelNetworkServiceTests: XCTestCase {
     func testExample() throws {

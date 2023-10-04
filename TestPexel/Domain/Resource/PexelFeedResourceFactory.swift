@@ -7,13 +7,19 @@
 
 import Foundation
 
-import CustomNetworkService
+import PNetworkService
 
 protocol PexelFeedResourceFactory {
     var feedResource: ((Int) -> Resource<PexelFeedResponseItem>) { get }
 }
 
 struct PexelFeedResourceFactoryImpl: PexelFeedResourceFactory {
+    private let jsonDecoder: JSONDecoder
+    
+    init(jsonDecoder: JSONDecoder) {
+        self.jsonDecoder = jsonDecoder
+    }
+    
     var feedResource: ((Int) -> Resource<PexelFeedResponseItem>) {
         return { page in
             var urlComponent = URLComponents()
@@ -35,8 +41,10 @@ struct PexelFeedResourceFactoryImpl: PexelFeedResourceFactory {
                 request.setValue(apiKey, forHTTPHeaderField: "Authorization")
             }
             
-            return Resource<PexelFeedResponseItem>(urlRequest: request)
+            return Resource<PexelFeedResponseItem>(
+                urlRequest: request) { data -> Result<PexelFeedResponseItem, Error> in
+                    Result { try self.jsonDecoder.decode(PexelFeedResponseItem.self, from: data) }
+                }
         }
     }
 }
-

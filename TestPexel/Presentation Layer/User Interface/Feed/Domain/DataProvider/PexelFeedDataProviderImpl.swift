@@ -7,13 +7,13 @@
 
 import Foundation
 
-import CustomNetworkService
+import PNetworkService
 
 struct PexelFeedDataProviderImpl: PexelFeedDataProvider {
-    private let network: NetworkService
+    private let network: PNetworkService.NetworkService
     private let resourceFactory: PexelFeedResourceFactory
     
-    init(network: NetworkService, resourceFactory: PexelFeedResourceFactory) {
+    init(network: PNetworkService.NetworkService, resourceFactory: PexelFeedResourceFactory) {
         self.network = network
         self.resourceFactory = resourceFactory
     }

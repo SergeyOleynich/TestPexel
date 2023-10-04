@@ -7,7 +7,7 @@
 
 import Foundation
 
-import CustomNetworkService
+import PNetworkService
 
 protocol PexelFeedInjection {
     var pexelDetailFeedInjection: PexelDetailFeedInjection { get }
@@ -36,12 +36,14 @@ struct PexelFeedInjectionImpl: PexelFeedInjection {
                 decoratee: ImageLoaderImpl()))
     }
     
-    var networkService: NetworkService {
-        RESTService()
+    var networkService: PNetworkService.NetworkService {
+        PNetworkService.RootContainer(dependencies: self)
+            .outputService
+            .networkService
     }
     
     var resourceFactory: PexelFeedResourceFactory {
-        PexelFeedResourceFactoryImpl()
+        PexelFeedResourceFactoryImpl(jsonDecoder: jsonDecoder)
     }
     
     var dataProvider: PexelFeedDataProvider {
@@ -51,6 +53,12 @@ struct PexelFeedInjectionImpl: PexelFeedInjection {
                 resourceFactory: resourceFactory),
             paginator: paginatorStateProvider)
     }
+    
+    private let jsonDecoder = JSONDecoder()
+}
+
+extension PexelFeedInjectionImpl: PNetworkService.Dependencies {
+    var urlSession: URLSession? { .shared }
 }
 
 protocol PexelDetailFeedInjection {

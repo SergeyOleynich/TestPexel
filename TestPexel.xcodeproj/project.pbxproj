@@ -13,7 +13,6 @@
 		7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40B12AC5675D00FE71D2 /* LaunchScreen.storyboard */; };
 		7DFC40BE2AC5751200FE71D2 /* PexelFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */; };
 		7DFC40C02AC577DA00FE71D2 /* PexelFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */; };
-		7DFC40D12AC5CB8100FE71D2 /* PexelNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */; };
 		7DFC40E52AC60CFA00FE71D2 /* PexelFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40E42AC60CFA00FE71D2 /* PexelFeedPresenter.swift */; };
 		7DFC40E92AC60DA200FE71D2 /* PexelFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40E82AC60DA200FE71D2 /* PexelFeedViewOutput.swift */; };
 		7DFC40EB2AC60DC700FE71D2 /* PexelFeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */; };
@@ -54,6 +53,7 @@
 		7DFC41492ACB52E500FE71D2 /* DetailFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */; };
 		7DFC414B2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */; };
 		7DFC41562ACD6CDD00FE71D2 /* PexelFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */; };
+		7DFC415F2ACD929300FE71D2 /* PexelNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFC415E2ACD929300FE71D2 /* PexelNetworkService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +65,6 @@
 		7DFC40B42AC5675D00FE71D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewController.swift; sourceTree = "<group>"; };
 		7DFC40BF2AC577DA00FE71D2 /* PexelFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedTableViewCell.swift; sourceTree = "<group>"; };
-		7DFC40C82AC5CA2600FE71D2 /* PexelNetworkService */ = {isa = PBXFileReference; lastKnownFileType = text; name = PexelNetworkService; path = TestPexel/Packages/PexelNetworkService; sourceTree = SOURCE_ROOT; };
 		7DFC40E42AC60CFA00FE71D2 /* PexelFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedPresenter.swift; sourceTree = "<group>"; };
 		7DFC40E82AC60DA200FE71D2 /* PexelFeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewOutput.swift; sourceTree = "<group>"; };
 		7DFC40EA2AC60DC700FE71D2 /* PexelFeedViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedViewInput.swift; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewOutput.swift; sourceTree = "<group>"; };
 		7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelDetailFeedModuleInput.swift; sourceTree = "<group>"; };
 		7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedRouter.swift; sourceTree = "<group>"; };
+		7DFC415D2ACD7B7100FE71D2 /* PexelNetworkService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PexelNetworkService; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DFC40D12AC5CB8100FE71D2 /* PexelNetworkService in Frameworks */,
+				7DFC415F2ACD929300FE71D2 /* PexelNetworkService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 		7DFC40C12AC580D500FE71D2 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				7DFC40C82AC5CA2600FE71D2 /* PexelNetworkService */,
+				7DFC415D2ACD7B7100FE71D2 /* PexelNetworkService */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -448,7 +448,7 @@
 			);
 			name = TestPexel;
 			packageProductDependencies = (
-				7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */,
+				7DFC415E2ACD929300FE71D2 /* PexelNetworkService */,
 			);
 			productName = TestPexel;
 			productReference = 7DFC40A32AC5675A00FE71D2 /* TestPexel.app */;
@@ -767,7 +767,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7DFC40D02AC5CB8100FE71D2 /* PexelNetworkService */ = {
+		7DFC415E2ACD929300FE71D2 /* PexelNetworkService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PexelNetworkService;
 		};

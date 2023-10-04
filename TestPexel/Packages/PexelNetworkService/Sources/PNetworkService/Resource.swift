@@ -10,6 +10,11 @@ import Foundation
 public struct Resource<ResponseModel> where ResponseModel: Decodable {
     let urlRequest: URLRequest
     let decoder: (Data) -> Result<ResponseModel, Error>
+    
+    public init(urlRequest: URLRequest, decoder: @escaping (Data) -> Result<ResponseModel, Error>) {
+        self.urlRequest = urlRequest
+        self.decoder = decoder
+    }
 }
 
 // MARK: - Default JSONDecoder
