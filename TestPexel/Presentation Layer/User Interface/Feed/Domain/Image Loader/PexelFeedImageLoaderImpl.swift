@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UIImage
 
-final class PexelFeedImageLoaderImpl: PexelFeedImageLoader {
+final class PexelFeedImageLoaderImpl {
     private let decoratee: ImageLoader
     private lazy var operationQueue: OperationQueue = {
         let operation = OperationQueue()
@@ -23,7 +23,9 @@ final class PexelFeedImageLoaderImpl: PexelFeedImageLoader {
     }
 }
 
-extension PexelFeedImageLoaderImpl {
+// MARK: - PexelFeedImageLoader
+
+extension PexelFeedImageLoaderImpl: PexelFeedImageLoader {
     func loadImage(for url: URL, in size: CGSize, radius: CGFloat, completion: @escaping (UIImage?, URL) -> Void) {
         decoratee.loadImage(for: url) {[weak self] image, imageUrl in
             switch image {

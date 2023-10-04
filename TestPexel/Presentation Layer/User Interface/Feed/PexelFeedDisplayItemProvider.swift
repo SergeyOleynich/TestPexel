@@ -18,9 +18,13 @@ protocol PexelFeedDisplayItemProvider {
     ) -> DetailFeedDisplayItem?
 }
 
-final class PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
+final class PexelFeedDisplayItemProviderImpl {
     weak var imageLoaderDelegate: PexelFeedDisplayPhotographerItemDelegate?
-    
+}
+
+// MARK: - PexelFeedDisplayItemProvider
+
+extension PexelFeedDisplayItemProviderImpl: PexelFeedDisplayItemProvider {
     func provideDisplayItem(from responseModel: PexelFeedResponsePhotoItem) -> PexelFeedDisplayItem {
         var displayItem = PexelFeedDisplayPhotographerItem(
             id: "\(responseModel.id)",

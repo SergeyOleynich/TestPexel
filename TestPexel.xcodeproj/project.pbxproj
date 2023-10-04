@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7DFC40A72AC5675A00FE71D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40A62AC5675A00FE71D2 /* AppDelegate.swift */; };
 		7DFC40A92AC5675A00FE71D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40A82AC5675A00FE71D2 /* SceneDelegate.swift */; };
-		7DFC40AE2AC5675A00FE71D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40AC2AC5675A00FE71D2 /* Main.storyboard */; };
 		7DFC40B02AC5675D00FE71D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40AF2AC5675D00FE71D2 /* Assets.xcassets */; };
 		7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFC40B12AC5675D00FE71D2 /* LaunchScreen.storyboard */; };
 		7DFC40BE2AC5751200FE71D2 /* PexelFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC40BD2AC5751200FE71D2 /* PexelFeedViewController.swift */; };
@@ -54,13 +53,13 @@
 		7DFC41472ACB52D100FE71D2 /* DetailFeedViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41462ACB52D100FE71D2 /* DetailFeedViewInput.swift */; };
 		7DFC41492ACB52E500FE71D2 /* DetailFeedViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */; };
 		7DFC414B2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */; };
+		7DFC41562ACD6CDD00FE71D2 /* PexelFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DFC40A32AC5675A00FE71D2 /* TestPexel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPexel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFC40A62AC5675A00FE71D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFC40A82AC5675A00FE71D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7DFC40AD2AC5675A00FE71D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DFC40AF2AC5675D00FE71D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DFC40B22AC5675D00FE71D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DFC40B42AC5675D00FE71D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		7DFC41462ACB52D100FE71D2 /* DetailFeedViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewInput.swift; sourceTree = "<group>"; };
 		7DFC41482ACB52E500FE71D2 /* DetailFeedViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFeedViewOutput.swift; sourceTree = "<group>"; };
 		7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelDetailFeedModuleInput.swift; sourceTree = "<group>"; };
+		7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				7DFC40BA2AC56CE000FE71D2 /* Resource */,
 				7DFC40A62AC5675A00FE71D2 /* AppDelegate.swift */,
 				7DFC40A82AC5675A00FE71D2 /* SceneDelegate.swift */,
-				7DFC40AC2AC5675A00FE71D2 /* Main.storyboard */,
 				7DFC40B12AC5675D00FE71D2 /* LaunchScreen.storyboard */,
 			);
 			path = TestPexel;
@@ -195,6 +194,7 @@
 				7DFC40E62AC60D8D00FE71D2 /* Presenter */,
 				7DFC40E72AC60D8D00FE71D2 /* View */,
 				7DFC41262ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift */,
+				7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -495,7 +495,6 @@
 				7DFC40B32AC5675D00FE71D2 /* LaunchScreen.storyboard in Resources */,
 				7DFC40F32AC61F9F00FE71D2 /* FeedMock.txt in Resources */,
 				7DFC40B02AC5675D00FE71D2 /* Assets.xcassets in Resources */,
-				7DFC40AE2AC5675A00FE71D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +531,7 @@
 				7DFC412A2ACB311400FE71D2 /* ApplicationCoordinator.swift in Sources */,
 				7DFC40F92AC9A62600FE71D2 /* PexelFeedDataProvider.swift in Sources */,
 				7DFC410F2ACAC5F000FE71D2 /* PexelFeedResponsePhotoItem.swift in Sources */,
+				7DFC41562ACD6CDD00FE71D2 /* PexelFeedRouter.swift in Sources */,
 				7DFC41382ACB45B600FE71D2 /* PexelFeedImageLoaderImpl.swift in Sources */,
 				7DFC412E2ACB314900FE71D2 /* PexelFeedAssembly.swift in Sources */,
 				7DFC41302ACB319400FE71D2 /* ViewInput.swift in Sources */,
@@ -554,14 +554,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7DFC40AC2AC5675A00FE71D2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7DFC40AD2AC5675A00FE71D2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7DFC40B12AC5675D00FE71D2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -699,7 +691,7 @@
 				INFOPLIST_FILE = TestPexel/Resource/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -731,7 +723,7 @@
 				INFOPLIST_FILE = TestPexel/Resource/Info.plist;
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

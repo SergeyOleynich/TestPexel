@@ -6,23 +6,18 @@
 //
 
 import Foundation
-import UIKit
 
 final class DetailFeedPresenter: PexelDetailFeedModuleInput {
     weak var viewInput: DetailFeedViewInput?
     var router: PexelFeedRouter?
-    
-    private let feedItem: DetailFeedDisplayItem
-    
-    init(feedItem: DetailFeedDisplayItem) {
-        self.feedItem = feedItem
-    }
+    var item: DetailFeedDisplayItem?
 }
 
 // MARK: - DetailFeedViewOutput
 
 extension DetailFeedPresenter: DetailFeedViewOutput {
     func onViewDidLoad() {
-        viewInput?.didLoad(item: feedItem)
+        guard let item = item else { return }
+        viewInput?.didLoad(item: item)
     }
 }

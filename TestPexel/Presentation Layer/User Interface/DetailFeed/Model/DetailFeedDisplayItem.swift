@@ -13,3 +13,9 @@ struct DetailFeedDisplayItem {
     let photographerName: String
     let imageString: String
 }
+
+// MARK: - Computed Properties
+
+extension DetailFeedDisplayItem {
+    var imageUrl: URL? { URL(string: imageString) }
+}

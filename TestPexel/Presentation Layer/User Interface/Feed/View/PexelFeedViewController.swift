@@ -7,20 +7,43 @@
 
 import UIKit
 
-import CustomNetworkService
-
 final class PexelFeedViewController: UIViewController {
-    // MARK: - IBOutlets
-    @IBOutlet private weak var tableView: UITableView!
-    private let refreshControl = UIRefreshControl()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(PexelFeedTableViewCell.self, forCellReuseIdentifier: String(describing: PexelFeedTableViewCell.self))
+        tableView.register(PexelFeedLoadMoreTableViewCell.self, forCellReuseIdentifier: String(describing: PexelFeedLoadMoreTableViewCell.self))
+        tableView.separatorStyle = .none
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        return tableView
+    }()
+    
+    private lazy var pullToRefresh: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshList(_:)), for: .valueChanged)
+        
+        return refreshControl
+    }()
 
     var output: PexelFeedViewOutput!
     
+    override func loadView() {
+        let contentView = UIView()
+
+        tableView.addSubview(pullToRefresh)
+        contentView.addSubview(tableView)
+        
+        self.view = contentView
+        
+        setupConstraints()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup(tableView: tableView)
-        setup(pullToRefresh: refreshControl)
         
         output.onViewDidLoad()
     }
@@ -31,7 +54,7 @@ final class PexelFeedViewController: UIViewController {
 extension PexelFeedViewController: PexelFeedViewInput {
     func didLoadItems() {
         DispatchQueue.main.async {[weak self] in
-            if self?.refreshControl.isRefreshing == true { self?.refreshControl.endRefreshing() }
+            if self?.pullToRefresh.isRefreshing == true { self?.pullToRefresh.endRefreshing() }
             
             self?.tableView.reloadData()
         }
@@ -47,7 +70,7 @@ extension PexelFeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let displayModel = output.items[indexPath.row]
-        
+
         let cell = tableView.dequeueReusableCell(
             withIdentifier: String(describing: displayModel.cellType),
             for: indexPath)
@@ -81,14 +104,12 @@ private extension PexelFeedViewController {
 // MARK: - Private
 
 private extension PexelFeedViewController {
-    func setup(tableView: UITableView) {
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        tableView.rowHeight = UITableView.automaticDimension
-    }
-    
-    func setup(pullToRefresh: UIRefreshControl) {
-        pullToRefresh.addTarget(self, action: #selector(refreshList(_:)), for: .valueChanged)
-        
-        tableView.addSubview(pullToRefresh)
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        ])
     }
 }

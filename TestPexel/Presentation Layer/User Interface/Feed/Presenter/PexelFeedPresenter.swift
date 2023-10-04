@@ -7,19 +7,10 @@
 
 import Foundation
 
-protocol PexelFeedRouter {
-    func navigate(to action: PexelFeedCoordinatorNavigationAction)
-}
-
-enum PexelFeedCoordinatorNavigationAction {
-    case detail(displayItem: DetailFeedDisplayItem)
-}
-
 final class PexelFeedPresenter: PexelFeedModuleInput {
     weak var viewInput: PexelFeedViewInput?
     var router: PexelFeedRouter?
     
-    private var test: [PexelFeedResponsePhotoItem] = []
     private var inputDataSource: [PexelFeedDisplayItem] = []
     private var responseDataSource: [PexelFeedResponsePhotoItem] = []
     private let dataProvider: PexelFeedDataProvider
@@ -43,7 +34,7 @@ extension PexelFeedPresenter: PexelFeedViewOutput {
     var items: [PexelFeedDisplayItem] { inputDataSource }
     
     func onViewDidLoad() {
-        provideData(for: 0)
+        provideData(for: 1)
     }
     
     func onSelected(item: PexelFeedDisplayItem) {
@@ -55,7 +46,7 @@ extension PexelFeedPresenter: PexelFeedViewOutput {
     func onRefreshList() {
         inputDataSource.removeAll()
         
-        provideData(for: 0)
+        provideData(for: 1)
     }
 }
 

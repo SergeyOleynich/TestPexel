@@ -10,4 +10,6 @@ import Foundation
 protocol PexelDetailFeedModuleInput {
     var viewInput: DetailFeedViewInput? { get set }
     var router: PexelFeedRouter? { get set }
+    
+    var item: DetailFeedDisplayItem? { get set }
 }

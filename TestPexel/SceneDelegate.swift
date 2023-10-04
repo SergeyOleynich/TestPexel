@@ -8,7 +8,7 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    private lazy var applicationAssembly: ApplicationAssembly? = {
+    private lazy var applicationAssembly: ApplicationAssembly = {
         return ApplicationAssemblyImpl(mainWindow: window)
     }()
     
@@ -18,8 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        applicationAssembly?.applicationCoordinator.start()
-        
+        applicationAssembly.applicationCoordinator.start()
     }
 }
 

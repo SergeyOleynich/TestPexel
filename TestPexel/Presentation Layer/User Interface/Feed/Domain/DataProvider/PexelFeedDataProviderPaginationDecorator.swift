@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PexelFeedDataProviderPaginationDecorator: PexelFeedDataProvider {
+final class PexelFeedDataProviderPaginationDecorator {
     let decoratee: PexelFeedDataProvider
     let paginator: PexelFeedPaginator
     
@@ -15,10 +15,13 @@ final class PexelFeedDataProviderPaginationDecorator: PexelFeedDataProvider {
         self.decoratee = decoratee
         self.paginator = paginator
     }
-    
+}
+
+// MARK: - PexelFeedDataProvider
+
+extension PexelFeedDataProviderPaginationDecorator: PexelFeedDataProvider {
     func provideData(for page: Int, completion: @escaping ((Result<PexelFeedResponseItem, Error>) -> Void)) {
         if page == 0 || paginator.state == .loadMore {
-            print("start loading")
             paginator.apply(event: .didStartLoading)
             decoratee.provideData(for: page) {[weak self] response in
                 switch response {
