@@ -34,9 +34,11 @@ final class PexelFeedLoadMoreTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - TableViewCell
+// MARK: - ModelConfigurable
 
-extension PexelFeedLoadMoreTableViewCell: TableViewCell {
+extension PexelFeedLoadMoreTableViewCell: CellSetupable {
+    static var reuseIdentifier: String { String(describing: Self.self) }
+    
     func setup(with model: PexelFeedDisplayLoadMoreItem) {
         model.onNextLoad()
     }

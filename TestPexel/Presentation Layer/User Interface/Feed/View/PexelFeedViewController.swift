@@ -71,13 +71,15 @@ extension PexelFeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let displayModel = output.items[indexPath.row]
 
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: String(describing: displayModel.cellType),
-            for: indexPath)
-        
-        (cell as? AnyTableViewCell)?.setupAny(model: displayModel)
-        
-        return cell
+        switch displayModel {
+        case let model as PexelFeedDisplayPhotographerItem:
+            return tableView.dequeueAndConfigureReusableCell(for: indexPath, with: model) as PexelFeedTableViewCell
+
+        case let model as PexelFeedDisplayLoadMoreItem:
+            return tableView.dequeueAndConfigureReusableCell(for: indexPath, with: model) as PexelFeedLoadMoreTableViewCell
+
+        default: preconditionFailure()
+        }
     }
 }
 

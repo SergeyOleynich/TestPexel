@@ -65,9 +65,11 @@ final class PexelFeedTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - TableViewCell
+// MARK: - ModelConfigurable
 
-extension PexelFeedTableViewCell: TableViewCell {
+extension PexelFeedTableViewCell: CellSetupable {
+    static var reuseIdentifier: String { String(describing: Self.self) }
+    
     func setup(with model: PexelFeedDisplayPhotographerItem) {
         title.text = model.title
         feedImageView.layer.shadowColor = nil

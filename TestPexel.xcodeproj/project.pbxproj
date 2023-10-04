@@ -54,6 +54,8 @@
 		7DFC414B2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */; };
 		7DFC41562ACD6CDD00FE71D2 /* PexelFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */; };
 		7DFC415F2ACD929300FE71D2 /* PexelNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 7DFC415E2ACD929300FE71D2 /* PexelNetworkService */; };
+		7DFC41612ACDA0DA00FE71D2 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41602ACDA0DA00FE71D2 /* UITableView+Extension.swift */; };
+		7DFC41632ACDA11800FE71D2 /* CellSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFC41622ACDA11800FE71D2 /* CellSetupable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		7DFC414A2ACB53EC00FE71D2 /* PexelDetailFeedModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelDetailFeedModuleInput.swift; sourceTree = "<group>"; };
 		7DFC41552ACD6CDD00FE71D2 /* PexelFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelFeedRouter.swift; sourceTree = "<group>"; };
 		7DFC415D2ACD7B7100FE71D2 /* PexelNetworkService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PexelNetworkService; sourceTree = "<group>"; };
+		7DFC41602ACDA0DA00FE71D2 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		7DFC41622ACDA11800FE71D2 /* CellSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSetupable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +324,7 @@
 				7DFC41172ACACABF00FE71D2 /* TableViewCell.swift */,
 				7DFC41192ACACAD200FE71D2 /* AnyTableViewCell.swift */,
 				7DFC411B2ACACAE600FE71D2 /* TableItem.swift */,
+				7DFC41622ACDA11800FE71D2 /* CellSetupable.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				7DFC413A2ACB47C900FE71D2 /* UIImage+Extension.swift */,
+				7DFC41602ACDA0DA00FE71D2 /* UITableView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -516,6 +522,8 @@
 				7DFC413E2ACB4F7700FE71D2 /* DetailFeedViewController.swift in Sources */,
 				7DFC41272ACB2CDE00FE71D2 /* PexelFeedModuleInput.swift in Sources */,
 				7DFC412C2ACB312300FE71D2 /* PexelFeedCoordinator.swift in Sources */,
+				7DFC41632ACDA11800FE71D2 /* CellSetupable.swift in Sources */,
+				7DFC41612ACDA0DA00FE71D2 /* UITableView+Extension.swift in Sources */,
 				7DFC41332ACB3A2900FE71D2 /* PexelFeedInjection.swift in Sources */,
 				7DFC41222ACADD8A00FE71D2 /* ImageLoaderImpl.swift in Sources */,
 				7DFC410D2ACAC58F00FE71D2 /* PexelFeedResponseItem.swift in Sources */,

@@ -6,8 +6,5 @@
 //
 
 import Foundation
-import UIKit.UIView
 
-protocol PexelFeedDisplayItem: TableItem {
-    var cellType: UIView.Type { get }
-}
+protocol PexelFeedDisplayItem: TableItem { }

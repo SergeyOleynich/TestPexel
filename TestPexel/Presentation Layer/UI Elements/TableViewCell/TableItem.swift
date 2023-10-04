@@ -6,5 +6,8 @@
 //
 
 import Foundation
+import UIKit.UIView
 
-protocol TableItem { }
+protocol TableItem {
+    var cellType: UIView.Type { get }
+}

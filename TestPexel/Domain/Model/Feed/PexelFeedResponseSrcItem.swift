@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PexelFeedResponseSrcItem {
+struct PexelFeedResponseSrcItem: Codable {
     let original: String
     let medium: String
 }
@@ -17,7 +17,3 @@ struct PexelFeedResponseSrcItem {
 extension PexelFeedResponseSrcItem {
     var mediumUrl: URL? { URL(string: medium) }
 }
-
-// MARK: - Codable
-
-extension PexelFeedResponseSrcItem: Codable { }
