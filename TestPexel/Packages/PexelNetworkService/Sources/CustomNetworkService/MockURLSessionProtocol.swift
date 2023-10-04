@@ -7,25 +7,33 @@
 
 import Foundation
 
-/*
- //        guard let feedMockUrl = Bundle.main.url(forResource: "FeedMock", withExtension: "txt") else { return }
- //        guard let feedMockData = try? Data(contentsOf: feedMockUrl) else { return }
- //
- //        let configuration = URLSessionConfiguration.default
- //        configuration.protocolClasses = [MockURLSessionProtocol.self]
- //        MockURLSessionProtocol.mock(
- //            for: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
- //            data: feedMockData,
- //            response: HTTPURLResponse(
- //                url: URL(string: "https://api.pexels.com/v1/curated?per_page=10&page=1")!,
- //                statusCode: 200,
- //                httpVersion: nil,
- //                headerFields: nil),
- //            error: nil)
-         
- //        let network = RESTService(session: URLSession(configuration: configuration))
- */
-
+/// URLSession mock protocol
+///
+/// A special class which is needed when developer would like to mock URLSession
+/// response with his custom response.
+///
+/// If internet connection is bad or server is not ready
+///
+///  ```
+///  guard let mockUrl = /*Url to your local mock data file*/ else { return }
+///  guard let mockData = try? Data(contentsOf: mockUrl) else { return }
+///
+///  let configuration = URLSessionConfiguration.default
+///  configuration.protocolClasses = [MockURLSessionProtocol.self]
+///
+///  MockURLSessionProtocol.mock(
+///     for: /*Your server side url*/,
+///     data: mockData,
+///     response: HTTPURLResponse(
+///         url: /*Your server side url*/,
+///         statusCode: 200,
+///         httpVersion: nil,
+///         headerFields: nil),
+///     error: nil)
+///
+/// let urlSession = URLSession(configuration: configuration)
+/// urlSession.dataTask(with: resource.urlRequest) { data, urlResponse, error in }.resume()
+/// ```
 public final class MockURLSessionProtocol: URLProtocol {
     private static var mocks: [URL: Mock] = [:]
     

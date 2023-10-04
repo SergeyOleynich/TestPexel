@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import Service
+@testable import CustomNetworkService
 
 final class ResponseValidatorTests: XCTestCase {
     func testErrorResponseValidatorForNilError() throws {

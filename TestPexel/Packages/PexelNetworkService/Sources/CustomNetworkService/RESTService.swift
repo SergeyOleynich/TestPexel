@@ -38,11 +38,16 @@ extension RESTService: NetworkService {
                     response(resource.decoder(data!))
                     
                 case let .failure(error):
-                    response(.failure(error))
+                    response(.failure(
+                        NetworkServiceError(
+                            errorCode: (error as NSError).code,
+                            underlayingError: error)))
                     
                 default:
-                    break
-                    //response(.failure(NetworkServiceError.noData))
+                    response(.failure(
+                        NetworkServiceError.init(
+                            errorCode: NetworkServiceErrorCode.noData.rawValue,
+                            underlayingError: nil)))
                 }
             }.resume()
     }
